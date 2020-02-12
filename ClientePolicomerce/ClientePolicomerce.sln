@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientePolicomerce", "ClientePolicomerce\ClientePolicomerce.csproj", "{81197801-8933-4F83-B1EF-FA347C951A7B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dto", "Dto\Dto.csproj", "{721B5529-FA1F-4433-9BC0-85ED2B65BF68}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{81197801-8933-4F83-B1EF-FA347C951A7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81197801-8933-4F83-B1EF-FA347C951A7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81197801-8933-4F83-B1EF-FA347C951A7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{721B5529-FA1F-4433-9BC0-85ED2B65BF68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{721B5529-FA1F-4433-9BC0-85ED2B65BF68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{721B5529-FA1F-4433-9BC0-85ED2B65BF68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{721B5529-FA1F-4433-9BC0-85ED2B65BF68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
