@@ -98,3 +98,4 @@ F:\repositorios\ClienteConsumeApi\ClientePolicomerce\ClientePolicomerce\obj\Debu
 F:\repositorios\ClienteConsumeApi\ClientePolicomerce\ClientePolicomerce\obj\Debug\ClientePolicomerce.csproj.CopyComplete
 F:\repositorios\ClienteConsumeApi\ClientePolicomerce\ClientePolicomerce\obj\Debug\ClientePolicomerce.dll
 F:\repositorios\ClienteConsumeApi\ClientePolicomerce\ClientePolicomerce\obj\Debug\ClientePolicomerce.pdb
+F:\repositorios\ClienteConsumeApi\ClientePolicomerce\ClientePolicomerce\bin\Content\Img\Banner.jpg

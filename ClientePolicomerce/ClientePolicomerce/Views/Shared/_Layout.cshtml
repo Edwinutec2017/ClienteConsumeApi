@@ -1,38 +1,52 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Menu/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/Menu/bootstrap.min.js"></script>
+    <script src="~/Scripts/Menu/jquery-1.11.1.min.js"></script>
+    <link href="~/Content/Menu/Menu.css" rel="stylesheet" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
+
     <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Nombre de aplicación", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+        <input type="checkbox" name="mobile-nav" id="mobile-nav" class="burger-check" onchange="this.blur()">
+        <label for="mobile-nav" class="burger white" tabindex="0"><span></span></label>
+        <nav role="navigation" class="header-nav">
+            <div class="fixed-nav">
+                <div class="menu">
+                    <div class="navbar-header">
+                   PONER EL TITULO 
+                    
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul>
+                            <li class="page_item page-item-2">
+                                @Html.ActionLink("Inicio", "Index", "Home")
+                            </li>
+                            <li class="page_item page-item-2">
+                                @Html.ActionLink("Acerca de", "About", "Home")
+                            </li>
+                            <li class="page_item page-item-2">
+                                @Html.ActionLink("Contacto", "Contact", "Home")
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
-                </ul>
-            </div>
-        </div>
+        </nav>
     </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+            <p>&copy; @DateTime.Now.Year - Policomerce </p>
         </footer>
     </div>
 

@@ -159,8 +159,15 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Img\Banner.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Login\all.css" />
     <Content Include="Content\Login\bootstrap.min.css" />
+    <Content Include="Content\Login\font-awesome.min.css" />
     <Content Include="Content\Login\Login.css" />
+    <Content Include="Content\Menu\bootstrap.min.css" />
+    <Content Include="Content\Menu\Menu.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -181,7 +188,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\Login\bootstrap.min.js" />
-    <Content Include="Scripts\Login\jquery-1.11.1.min.js" />
+    <Content Include="Scripts\Login\jquery.min.js" />
+    <Content Include="Scripts\Menu\bootstrap.min.js" />
+    <Content Include="Scripts\Menu\jquery-1.11.1.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -198,6 +207,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Login\Registro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

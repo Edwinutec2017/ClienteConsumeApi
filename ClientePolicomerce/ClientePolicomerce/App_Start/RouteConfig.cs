@@ -16,6 +16,7 @@ namespace ClientePolicomerce
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
+                /*PARA INICIAR LA PAGINA */
                 defaults: new { controller = "Login", action = "Index", id = UrlParameter.Optional }
             );
         }
