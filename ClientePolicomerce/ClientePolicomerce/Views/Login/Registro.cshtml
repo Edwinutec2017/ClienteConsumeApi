@@ -1,70 +1,119 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
-
 <!DOCTYPE html>
-
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Registro</title>
+    <title>Registro Usuario</title>
     <link href="~/Content/Login/bootstrap.min.css" rel="stylesheet" />
-    <script src="~/Scripts/Login/bootstrap.min.js"></script>
-    <script src="~/Scripts/Login/jquery-1.11.1.min.js"></script>
     <link href="~/Content/Login/Login.css" rel="stylesheet" />
+    <link href="~/Content/Login/all.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
+    <div class="container">
+  
+            <div class=" justify-content-center regText" style="padding-top:25px">
+                <div class="card-header" >
+                    <h1 align="center" >POLICOMERCE</h1>
+                    <h2 align="center" >REGISTRO USUARIO</h2>
 
-
-    <div id="login">
-        <h3 class="text-center text-white pt-3">POLICOMERCE</h3>
-        <div class="container">
-            <div id="login-row" class="row justify-content-center align-items-center">
-                <div id="login-column" class="col-md-6" style="background-color:#EAE7E6">
-                    <div id="register-link" class="text-right">
-                        <button type="button" class="btn btn-link">@Html.ActionLink("CANCELAR", "Index", "Login")</button>
-
-                    </div>
-                    <h3 class="text-center text-info">Registro de Usuario</h3>
-                    <form id="login-form" class="form" action="" method="post">
-
-                        <div class="form-group">
-                            <label for="username" class="text-info">Usuario:</label><br>
-                            <input type="text" name="username" id="username" class="form-control" required placeholder="Usuario">
-                        </div>
-                        <div class="form-group">
-                            <label for="password" class="text-info">Password:</label><br>
-                            <input type="password" name="password" id="password" class="form-control" required placeholder="Password">
-                        </div>
-                        <div class="form-group">
-                            <label for="password" class="text-info">Password:</label><br>
-                            <input type="password" name="password" id="password" class="form-control" required placeholder="Password">
-                        </div>
-                        <div class="form-group">
-                            <label for="password" class="text-info">Password:</label><br>
-                            <input type="password" name="password" id="password" class="form-control" required placeholder="Password">
-                        </div>
-                        <div class="form-group">
-                            <label for="password" class="text-info">Password:</label><br>
-                            <input type="password" name="password" id="password" class="form-control" required placeholder="Password">
-                        </div>
-                        <div class="form-group">
-                            <label for="password" class="text-info">Password:</label><br>
-                            <input type="password" name="password" id="password" class="form-control" required placeholder="Password">
-                        </div>
-                        <div class="form-group">
-
-                            <input type="submit" name="submit" class="btn btn-info btn-md" value="REGISTRO">
-                        </div>
-
-
-                    </form>
                 </div>
             </div>
-        </div>
+
+            <form>
+                <div class="d-flex justify-content-center">
+
+                    <div class="card" style="padding:10px;padding-top:25px">
+                       
+                        <div class="input-group form-group">
+                            <input type="text" class="form-control" id="nombre1" placeholder="Primer Nombre" required>
+                        </div>
+                        <div class="input-group form-group">
+                            <input type="text" class="form-control" id="nombre2" placeholder="Segundo Nombre">
+                        </div>
+                        <div class="input-group form-group">
+                            <input type="text" class="form-control" id="apellido1" placeholder="Primer Apellido" required>
+                        </div>
+                        <div class="input-group form-group">
+                            <input type="text" class="form-control" id="apellido2" placeholder="Segundo Apellido" required>
+                        </div>
+                        <div class="input-group form-group">
+                            <input type="number" class="form-control" placeholder="Edad" required>
+                        </div>
+                        <div class="input-group form-group">
+                            <select class="form-control" required>
+                                <option>Genero</option>
+                                <option value="M">Masculino</option>
+                                <option value="F">Femenino</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+                    <div class="card" style="padding:10px;padding-top:25px">
+                        <div class="input-group form-group">
+                            <input type="tel" class="form-control" id="telefono" placeholder="Telefono" required>
+                        </div>
+                        <div class="input-group form-group">
+                            <select class="form-control" required>
+                                <option>Departamento</option>
+                                <option value="M">Masculino</option>
+                                <option value="F">Femenino</option>
+
+                            </select>
+
+                        </div>
+                        <div class="input-group form-group">
+                            <select class="form-control" required>
+                                <option>Municipio</option>
+                                <option value="M">Masculino</option>
+                                <option value="F">Femenino</option>
+
+                            </select>
+
+                        </div>
+                        <div class="input-group form-group">
+                            <input type="text" class="form-control" id="direccion" placeholder="Direccion">
+                        </div>
+                        <div class="input-group form-group">
+                            <input type="text" class="form-control" id="usuario" placeholder="Usuario" required>
+                        </div>
+                        <div class="input-group form-group">
+                            <input type="password" class="form-control" id="pass1" placeholder="Password" required>
+                        </div>
+                   
+
+                    </div>
+
+                    <div class="card" style="padding:10px;padding-top:25px">
+                        <div class="input-group form-group">
+                            <input type="password" class="form-control" id="pass1" placeholder="Repita Password" required>
+                        </div>
+                        <div class="input-group form-group">
+                            <input type="email" class="form-control" id="pass1" placeholder="Email" required>
+                        </div>
+                        <label style="color:white">Imagen</label>
+                        <div class="input-group form-group">
+
+                            <input type="file" class="form-control" id="pass1" placeholder="Imagen">
+                        </div>
+                        <div class="card-body">
+
+                            <div class="form-group">
+
+                                <input type="submit" value="Registro" class="btn btn-primary btn-lg active float-right ">
+                                <a href="/Login/Index" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Cancelar</a>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+       
     </div>
 </body>
-
 </html>
-
