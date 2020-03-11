@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dto.Dto.Login;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,14 @@ namespace ClientePolicomerce.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            ActionResult result;
+            if (!(Session["User"] is LoginDto a))
+            {
+                result = RedirectToAction("Index", "Login");
+            }
+            else
+                result = View();
+            return result;
         }
 
         public ActionResult About()

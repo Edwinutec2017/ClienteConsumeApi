@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@using Dto.Dto.Login;
+@{
+    ViewBag.Title = "Menu Principal";
+    var usuario = Session["User"] as LoginDto;
+
+}
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -14,6 +21,7 @@
 </head>
 <body>
 
+
     <div class="navbar navbar-inverse navbar-fixed-top">
 
         <input type="checkbox" name="mobile-nav" id="mobile-nav" class="burger-check" onchange="this.blur()">
@@ -21,12 +29,15 @@
         <nav role="navigation" class="header-nav">
             <div class="fixed-nav">
                 <div class="menu">
-                    <div class="navbar-header">
-                   PONER EL TITULO 
-                    
-                    </div>
+
                     <div class="navbar-collapse collapse">
                         <ul>
+
+                            <li class="page_item page-item-2">
+                                <h4>Bienvenido : @usuario.User</h4>
+                            </li>
+
+
                             <li class="page_item page-item-2">
                                 @Html.ActionLink("Inicio", "Index", "Home")
                             </li>
@@ -35,6 +46,14 @@
                             </li>
                             <li class="page_item page-item-2">
                                 @Html.ActionLink("Contacto", "Contact", "Home")
+                            </li>
+                            <li class="page_item page-item-2">
+                                <p>
+
+                                    <a href="@Url.Action("CerrarSession","Login")" class="btn btn-info btn-lg">
+                                        <span class="glyphicon glyphicon-log-out"></span>Cerrar Session
+                                    </a>
+                                </p>
                             </li>
                         </ul>
                     </div>

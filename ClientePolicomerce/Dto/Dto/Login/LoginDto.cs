@@ -11,5 +11,7 @@ namespace Dto.Dto.Login
         public string User { get; set; }
 
         public string Password { get; set; }
+
+        public int Id { get; set; }
     }
 }
