@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dto
+namespace Dto.Url
 {
-    public class Class1
+    public class UrlMethodos
     {
+
+
+
     }
 }
