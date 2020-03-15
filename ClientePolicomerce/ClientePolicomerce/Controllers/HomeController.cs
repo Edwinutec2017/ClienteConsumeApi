@@ -12,7 +12,7 @@ namespace ClientePolicomerce.Controllers
         public ActionResult Index()
         {
             ActionResult result;
-            if (!(Session["User"] is LoginDto a))
+            if (!(Session["User"] is LoginDto ))
             {
                 result = RedirectToAction("Index", "Login");
             }

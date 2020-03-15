@@ -1,6 +1,5 @@
 F:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\bin\Debug\Dto.dll
 F:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\bin\Debug\Dto.pdb
-F:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\obj\Debug\Dto.csprojAssemblyReference.cache
 F:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\obj\Debug\Dto.csproj.CoreCompileInputs.cache
 F:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\obj\Debug\Dto.dll
 F:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\obj\Debug\Dto.pdb

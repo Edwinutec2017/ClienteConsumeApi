@@ -60,16 +60,12 @@ namespace ClientePolicomerce.Controllers
             
         }
 
-        public ActionResult Registro()
-        {
-            return View();
-        }
-
+    
         public ActionResult CerrarSession()
         {
             Session["User"] = null;
             Session.Remove("User");
-            
+            TempData["msg"] = "";
             return RedirectToAction("Index", "Login"); ;
         }
     }
