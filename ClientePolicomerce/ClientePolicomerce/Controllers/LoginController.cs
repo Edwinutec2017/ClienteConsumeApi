@@ -1,9 +1,7 @@
-﻿using ClientePolicomerce.ViewModels.Login;
-using Dto.Dto.Login;
+﻿using Dto.Dto.Login;
+using Dto.Url;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace ClientePolicomerce.Controllers
@@ -13,9 +11,6 @@ namespace ClientePolicomerce.Controllers
      
         public LoginController()
         {
-
-
-
         }
 
         public ActionResult Index()
@@ -27,26 +22,36 @@ namespace ClientePolicomerce.Controllers
 
         }
 
-
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult Index(Usuario usuario)
+        public ActionResult Index(LoginUser usr)
         {
             ActionResult result;
             try {
-                if (usuario !=null) {
-                    if (usuario.User.Equals("a1") && usuario.Password.Equals("123"))
+                if (usr != null) {
+             
+                        UrlApi api = new UrlApi();
+                        LoginUser loginUser = usr;
+                        UrlMethodos urlMethodos = new UrlMethodos(api.UrlLogin(),loginUser);
+                       
+                       List<LoginDto> datos = urlMethodos.ValidarLogin();
+                    if (datos.Count > 0)
                     {
-                        Session["User"] = new LoginDto { Id = 1, User = "a1" };
-                        TempData["msg"] = "Exito correcto";
+                        foreach (var user in datos) {
+
+                            Session["User"] = new LoginDto { Codigo = user.Codigo, Nombre = user.Nombre };
+                          
+                        }
+                      
                         result = RedirectToAction("Index", "Home");
                     }
-                    else {
-                        TempData["msg"] = "Error de Credenciales";
+                    else
+                    {
+                        TempData["msg"] = "Error de autenticacion..";
                         result = View();
                     }
-                 
+                    
                 }
                 else {
                     TempData["msg"] = "Campos Vacios..";
@@ -54,13 +59,12 @@ namespace ClientePolicomerce.Controllers
                 }
                 return result;
             }
-            catch (Exception ) {
+            catch (Exception ex ) {
+                Console.WriteLine($"Error de Autenticacion {ex.StackTrace} ");
                 return View();
             }
             
         }
-
-    
         public ActionResult CerrarSession()
         {
             Session["User"] = null;

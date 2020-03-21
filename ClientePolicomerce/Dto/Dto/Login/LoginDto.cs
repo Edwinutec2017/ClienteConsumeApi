@@ -8,10 +8,8 @@ namespace Dto.Dto.Login
 {
   public  class LoginDto
     {
-        public string User { get; set; }
-
-        public string Password { get; set; }
-
-        public int Id { get; set; }
+        public int Codigo { get; set; }
+        public string Nombre { get; set; }
+       
     }
 }
