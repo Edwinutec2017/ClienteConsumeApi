@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dto\Departamento\DepyMuni.cs" />
     <Compile Include="Dto\Login\LoginDto.cs" />
     <Compile Include="Dto\Login\LoginUser.cs" />
     <Compile Include="Dto\Login\Registro.cs" />

@@ -29,13 +29,20 @@ namespace Dto.Url
 
         public List<LoginDto> ValidarLogin()
         {
-            List<LoginDto> loginDto=null;
-            var result1 = Post();
-            if (result1.IsSuccessStatusCode)
+            try
             {
-                loginDto = result1.Content.ReadAsAsync<List<LoginDto>>().Result;
+                List<LoginDto> loginDto = null;
+                var result1 = Post();
+                if (result1.IsSuccessStatusCode)
+                {
+                    loginDto = result1.Content.ReadAsAsync<List<LoginDto>>().Result;
+                }
+                return loginDto;
             }
-            return loginDto;
+            catch (Exception ex) {
+                Console.WriteLine($"Erro Validar Login..{ex}");
+                return null;
+            }
 
         }
 
@@ -43,5 +50,17 @@ namespace Dto.Url
 
             return client.PostAsJsonAsync(ulrApi, obj).Result;
         }
+
+        private HttpResponseMessage Get()
+        {
+            return client.GetAsync(ulrApi).Result;
+
+        }
+        private HttpResponseMessage GetId()
+        {
+            return client.GetAsync(ulrApi).Result;
+
+        }
+
     }
 }

@@ -1,10 +1,10 @@
 ﻿
-namespace Dto.Dto.Login
+namespace Dto.Dto.Departamento
 {
-  public  class LoginDto
+    public class DepyMuni
     {
         public int Codigo { get; set; }
         public string Nombre { get; set; }
-       
+
     }
 }

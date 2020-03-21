@@ -15,7 +15,20 @@ namespace Dto.Url
             var url =$"{host}ords/policomerce/policomerce/login";
             return url;
         }
-        
 
+      
+        public string UrlDepartamento()
+        {
+            var url = $"{host}ords/policomerce/policomerce/departamento/";
+            return url;
+
+        }
+        public string UrlMunicipio(int id)
+        {
+            var url = $"{host}ords/policomerce/policomerce/municipios/{id}";
+            return url;
+
+        }
     }
+}
 }
