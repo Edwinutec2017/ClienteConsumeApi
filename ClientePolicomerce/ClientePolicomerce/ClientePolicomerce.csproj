@@ -163,6 +163,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RegistroController.cs" />
+    <Compile Include="Extencion\AjaxOnly.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -203,6 +204,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\Login\bootstrap.min.js" />
     <Content Include="Scripts\Login\jquery.min.js" />
+    <Content Include="Scripts\Registro\jquery.min.js" />
     <Content Include="Scripts\Registro\LoginRegistro.js" />
     <Content Include="Scripts\Menu\bootstrap.min.js" />
     <Content Include="Scripts\Menu\jquery-1.11.1.min.js" />
@@ -226,7 +228,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

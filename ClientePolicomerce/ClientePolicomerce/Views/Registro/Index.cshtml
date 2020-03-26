@@ -60,12 +60,17 @@
                         <input type="tel" name="Telefono" class="form-control" id="telefono" placeholder="Telefono" required>
                     </div>
                     <div class="input-group form-group">
-                        <select class="form-control" name="Departamento" onchange="cargarPueblos();" id="Departamento" required>
+                        <select class="form-control" onchange="CargarMunicipios()" name="Departamento" id="Departamento">
                             <option value=null>Departamento</option>
+                            @foreach (var dep in ViewBag.DepyMuni)
+                            {
+                                <option data-Codigo="@dep.Codigo" value="@dep.Codigo">@dep.Nombre</option>
+
+                            }
                         </select>
                     </div>
                     <div class="input-group form-group">
-                        <select class="form-control"  name="IdMunicipio" id="IdMunicipio" required>
+                        <select class="form-control" name="IdMunicipio" id="IdMunicipio">
                             <option value="">Municipio</option>
 
                         </select>
@@ -95,7 +100,7 @@
 
                         <div class="form-group">
                             <input type="submit" value="Registro" onchange="validarPassword();" class="btn btn-primary btn-lg active float-right ">
-                            <a href="/Login/Index" class="btn btn-danger btn-lg active" id="Cancelar"  role="button">Cancelar</a>
+                            <a href="/Login/Index" class="btn btn-danger btn-lg active" id="Cancelar" role="button">Cancelar</a>
                         </div>
                     </div>
                 </div>
@@ -104,10 +109,13 @@
     </div>
     <div>
         <br />
-       
+
         <h5 style="color:#ffffff" id="msg">
-            <span id="msg">@mensaje</span></h5>
+            <span id="msg">@mensaje</span>
+        </h5>
     </div>
+
+    <script src="~/Scripts/Registro/jquery.min.js"></script>
     <script src="~/Scripts/Registro/LoginRegistro.js"></script>
 
 </body>

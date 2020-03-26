@@ -1,4 +1,5 @@
-﻿using Dto.Dto.Login;
+﻿using Dto.Dto.Departamento;
+using Dto.Dto.Login;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,12 +41,34 @@ namespace Dto.Url
                 return loginDto;
             }
             catch (Exception ex) {
-                Console.WriteLine($"Erro Validar Login..{ex}");
+                Console.WriteLine($"Erro Validar Login..{ex.StackTrace}");
                 return null;
             }
 
         }
 
+        public List<DepyMuni> Departamento_Municipio()
+        {
+           
+            try
+            {
+                List<DepyMuni> Dep = null;
+                var result1 = Get();
+                if (result1.IsSuccessStatusCode)
+                {
+                    Dep = result1.Content.ReadAsAsync<List<DepyMuni>>().Result;
+                }
+                return Dep;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error traer departamentos.. {ex.StackTrace} ");
+                return null;
+            }
+
+        }
+
+        #region METODOS URL
         private HttpResponseMessage Post() {
 
             return client.PostAsJsonAsync(ulrApi, obj).Result;
@@ -56,11 +79,7 @@ namespace Dto.Url
             return client.GetAsync(ulrApi).Result;
 
         }
-        private HttpResponseMessage GetId()
-        {
-            return client.GetAsync(ulrApi).Result;
 
-        }
-
+        #endregion
     }
 }
