@@ -14,4 +14,3 @@ C:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\obj\Debug\Dto.csproj.Co
 C:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\obj\Debug\Dto.csproj.CopyComplete
 C:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\obj\Debug\Dto.dll
 C:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\obj\Debug\Dto.pdb
-C:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\obj\Debug\Dto.csprojAssemblyReference.cache

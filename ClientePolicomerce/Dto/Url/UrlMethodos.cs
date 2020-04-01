@@ -36,6 +36,7 @@ namespace Dto.Url
                 var result1 = Post();
                 if (result1.IsSuccessStatusCode)
                 {
+                  
                     loginDto = result1.Content.ReadAsAsync<List<LoginDto>>().Result;
                 }
                 return loginDto;
@@ -56,6 +57,8 @@ namespace Dto.Url
                 var result1 = Get();
                 if (result1.IsSuccessStatusCode)
                 {
+                   
+                    /*validar que sea tipo json  */
                     Dep = result1.Content.ReadAsAsync<List<DepyMuni>>().Result;
                 }
                 return Dep;

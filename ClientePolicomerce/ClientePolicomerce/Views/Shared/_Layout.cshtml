@@ -12,12 +12,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
-    <link href="~/Content/Menu/bootstrap.min.css" rel="stylesheet" />
-    <script src="~/Scripts/Menu/bootstrap.min.js"></script>
-    <script src="~/Scripts/Menu/jquery-1.11.1.min.js"></script>
+
     <link href="~/Content/Menu/Menu.css" rel="stylesheet" />
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
 
@@ -42,15 +39,15 @@
                                 @Html.ActionLink("Inicio", "Index", "Home")
                             </li>
                             <li class="page_item page-item-2">
-                                @Html.ActionLink("Acerca de", "About", "Home")
+                                @Html.ActionLink("Catalogos", "About", "Home")
                             </li>
                             <li class="page_item page-item-2">
-                                @Html.ActionLink("Contacto", "Contact", "Home")
+                                @Html.ActionLink("Pedidos", "Contact", "Home")
                             </li>
                             <li class="page_item page-item-2">
                                 <p>
-                                    <a href="@Url.Action("CerrarSession","Login")" class="btn btn-info btn-lg">
-                                        <span class="glyphicon glyphicon-log-out"></span>Cerrar Session
+                                    <a href="@Url.Action("CerrarSession","Login")" class="btn btn-primary btn-lg" style="color:white">
+                                        <span class="glyphicon glyphicon-log-out"></span>Salir
                                     </a>
                                 </p>
                             </li>
