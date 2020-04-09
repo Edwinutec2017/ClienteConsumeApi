@@ -29,6 +29,14 @@ namespace Dto.Url
             return url;
 
         }
+
+        public string ValidarUsuario(string nombre)
+        {
+            var url = $"{host}ords/policomerce/policomerce/usuarios/?USUARIO={nombre}";
+            return url;
+
+        }
+
     }
 }
 

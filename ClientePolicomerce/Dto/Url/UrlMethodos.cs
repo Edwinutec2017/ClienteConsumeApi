@@ -58,7 +58,6 @@ namespace Dto.Url
                 if (result1.IsSuccessStatusCode)
                 {
                    
-                    /*validar que sea tipo json  */
                     Dep = result1.Content.ReadAsAsync<List<DepyMuni>>().Result;
                 }
                 return Dep;
@@ -70,6 +69,30 @@ namespace Dto.Url
             }
 
         }
+
+        public int ValidarUser()
+        {
+
+            try
+            {
+                List<ValidarUser> usua = new List<ValidarUser>(); 
+                var result1 = Get();
+                if (result1.IsSuccessStatusCode)
+                {
+
+                    usua= result1.Content.ReadAsAsync<List<ValidarUser>>().Result;
+                    
+                }
+                return usua.Count() > 0 ? 200 : 400;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error traer departamentos.. {ex.StackTrace} ");
+                return 500;
+            }
+
+        }
+
 
         #region METODOS URL
         private HttpResponseMessage Post() {
