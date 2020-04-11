@@ -13,7 +13,6 @@ namespace ClientePolicomerce.Controllers
             UrlApi urlApi = new UrlApi();
             UrlMethodos urlMethodos = new UrlMethodos(urlApi.UrlDepartamento(),null);
             ViewBag.DepyMuni = urlMethodos.Departamento_Municipio(); 
-
             return View();
         }
 
@@ -22,7 +21,17 @@ namespace ClientePolicomerce.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index(Registro registro)
         {
-            return View();
+            ActionResult result;
+            UrlApi urlApi = new UrlApi();
+            UrlMethodos urlMethodos = new UrlMethodos(urlApi.CrearUsuario(), registro);
+            var resp = urlMethodos.RegistroUsuario();
+            if (resp == 200) 
+                TempData["msg"] = "Usuario Creado Con Exito";
+            else
+                TempData["msg"] = "El Usuario No se Pudo Registrar";
+
+            result = RedirectToAction("Index", "Registro");
+            return result; 
         }
 
         [HttpPost]
@@ -31,7 +40,6 @@ namespace ClientePolicomerce.Controllers
 
             ActionResult result;
             UrlApi urlApi = new UrlApi();
-
             UrlMethodos urlMethodos = new UrlMethodos(urlApi.ValidarUsuario(usuario), null);
             var obj = urlMethodos.ValidarUser();
             result = Json(obj);
@@ -42,16 +50,11 @@ namespace ClientePolicomerce.Controllers
         [HttpPost]
         public ActionResult Municipios(int iddep)
         {
-            ActionResult result;
-            UrlApi urlApi = new UrlApi();
-                
+          ActionResult result;
+          UrlApi urlApi = new UrlApi();
           UrlMethodos urlMethodos = new UrlMethodos(urlApi.UrlMunicipio(iddep), null);
-
            var obje = urlMethodos.Departamento_Municipio();
-
             result = Json(obje);
-
-            
             return result;
         }
     }

@@ -23,9 +23,10 @@ namespace Dto.Url
             return url;
 
         }
+      
         public string UrlMunicipio(int id)
         {
-            var url = $"{host}ords/policomerce/policomerce/municipios/{id}";
+            var url = $"{host}ords/policomerce/policomerce/municipios/?ID={id}";
             return url;
 
         }
@@ -35,6 +36,11 @@ namespace Dto.Url
             var url = $"{host}ords/policomerce/policomerce/usuarios/?USUARIO={nombre}";
             return url;
 
+        }
+
+        public string CrearUsuario() {
+            var url =$"{host}ords/policomerce/policomerce/usuarios/";
+            return url;
         }
 
     }

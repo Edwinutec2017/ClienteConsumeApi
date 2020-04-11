@@ -27,7 +27,7 @@ namespace Dto.Url
          
         }
         #endregion
-
+        #region login
         public List<LoginDto> ValidarLogin()
         {
             try
@@ -47,7 +47,8 @@ namespace Dto.Url
             }
 
         }
-
+        #endregion
+        #region departamentos
         public List<DepyMuni> Departamento_Municipio()
         {
            
@@ -69,7 +70,8 @@ namespace Dto.Url
             }
 
         }
-
+        #endregion
+        #region validar usuario
         public int ValidarUser()
         {
 
@@ -87,12 +89,37 @@ namespace Dto.Url
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error traer departamentos.. {ex.StackTrace} ");
+                Console.WriteLine($"Error validar usuario.. {ex.StackTrace} ");
                 return 500;
             }
 
         }
+        #endregion
 
+        #region Registro Usuario
+        public int RegistroUsuario()
+        {
+
+            try
+            {
+                RespRegistro usua = new RespRegistro();
+                var result1 = Post();
+                if (result1.IsSuccessStatusCode)
+                {
+
+                    usua = result1.Content.ReadAsAsync<RespRegistro>().Result;
+
+                }
+                return usua.Status == "200" ? 200 : 400;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error validar usuario.. {ex.StackTrace} ");
+                return 500;
+            }
+
+        }
+        #endregion
 
         #region METODOS URL
         private HttpResponseMessage Post() {
@@ -105,7 +132,7 @@ namespace Dto.Url
             return client.GetAsync(ulrApi).Result;
 
         }
-
         #endregion
+
     }
 }

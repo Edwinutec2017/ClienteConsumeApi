@@ -42,7 +42,7 @@
                         <input type="text" name="APELLIDO2" class="form-control" id="apellido2" placeholder="Segundo Apellido">
                     </div>
                     <div class="input-group form-group">
-                        <input type="number" name="EDAD" class="form-control" id="EDAD" placeholder="EDAD" required>
+                        <input type="text" name="EDAD" class="form-control" id="EDAD" placeholder="EDAD" required maxlength="2">
                     </div>
                     <div class="input-group form-group">
                         <select class="form-control" name="GENERO" required>
@@ -57,7 +57,7 @@
                 </div>
                 <div class="card" style="padding:10px;padding-top:25px">
                     <div class="input-group form-group">
-                        <input type="tel" name="TELEFONO" class="form-control" id="telefono" placeholder="Telefono" required>
+                        <input type="tel" name="TELEFONO" class="form-control" id="telefono" placeholder="Telefono" required maxlength="28">
                     </div>
                     <div class="input-group form-group">
                         <select class="form-control" onchange="CargarMunicipios()" name="Departamento" id="Departamento">
@@ -102,23 +102,15 @@
                             <input type="submit" name="reg" id="reg" value="Registro" class="btn btn-primary btn-lg active float-right ">
                             <a href="/Login/Index" class="btn btn-danger btn-lg active" id="Cancelar" role="button">Cancelar</a>
                         </div>
-                        <div id="conte" style="color:#ffffff"></div>
+                        <div id="conte" style="color:#ffffff">@mensaje</div>
                     </div>
                 </div>
             </div>
         }
+    
+       
     </div>
-    <div>
-        <br />
-
-        <h5 style="color:#ffffff" id="msg">
-            <span id="msg">@mensaje</span>
-
-        </h5>
-
-    </div>
-
-
+  
     <script src="~/Scripts/jquery-1.11.1.min.js"></script>
     <script src="~/Scripts/Registro/LoginRegistro.js"></script>
 

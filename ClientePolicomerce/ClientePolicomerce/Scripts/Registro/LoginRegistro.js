@@ -1,5 +1,4 @@
 ﻿
-
 /*llamada de methodos*/
 function CargarMunicipios() {
     var departamento = document.getElementById('Departamento').value;
@@ -26,7 +25,6 @@ function CargarMunicipios() {
             }
        
         });
-
     }
 }
 function ValidarUsuario() {
