@@ -31,11 +31,9 @@ namespace ClientePolicomerce.Controllers
             try {
                 if (usr != null) {
              
-                        UrlApi api = new UrlApi();
-                        LoginUser loginUser = usr;
-                        UrlMethodos urlMethodos = new UrlMethodos(api.UrlLogin(),loginUser);
-                       
-                       List<LoginDto> datos = urlMethodos.ValidarLogin();
+                  LoginUser loginUser = usr;
+                   UrlMethodos urlMethodos = new UrlMethodos(loginUser);
+                   List<LoginDto> datos = urlMethodos.ValidarLogin();
                     if (datos.Count > 0)
                     {
                         foreach (var user in datos) {

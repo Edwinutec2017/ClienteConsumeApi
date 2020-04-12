@@ -15,34 +15,29 @@ namespace Dto.Url
             var url =$"{host}ords/policomerce/policomerce/login";
             return url;
         }
-
-      
         public string UrlDepartamento()
         {
             var url = $"{host}ords/policomerce/policomerce/departamento/";
             return url;
-
         }
-      
         public string UrlMunicipio(int id)
         {
             var url = $"{host}ords/policomerce/policomerce/municipios/?ID={id}";
             return url;
-
         }
-
-        public string ValidarUsuario(string nombre)
+        public string UrlValidarUsuario(string nombre)
         {
             var url = $"{host}ords/policomerce/policomerce/usuarios/?USUARIO={nombre}";
             return url;
-
         }
-
-        public string CrearUsuario() {
+        public string UrlCrearUsuario() {
             var url =$"{host}ords/policomerce/policomerce/usuarios/";
             return url;
         }
-
+        public string UrlListaProductos() {
+            var url = $"{host}ords/policomerce/policomerce/articulos/";
+            return url;
+        }
     }
 }
 

@@ -10,8 +10,7 @@ namespace ClientePolicomerce.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            UrlApi urlApi = new UrlApi();
-            UrlMethodos urlMethodos = new UrlMethodos(urlApi.UrlDepartamento(),null);
+            UrlMethodos urlMethodos = new UrlMethodos(null);
             ViewBag.DepyMuni = urlMethodos.Departamento_Municipio(); 
             return View();
         }
@@ -22,8 +21,7 @@ namespace ClientePolicomerce.Controllers
         public ActionResult Index(Registro registro)
         {
             ActionResult result;
-            UrlApi urlApi = new UrlApi();
-            UrlMethodos urlMethodos = new UrlMethodos(urlApi.CrearUsuario(), registro);
+            UrlMethodos urlMethodos = new UrlMethodos( registro);
             var resp = urlMethodos.RegistroUsuario();
             if (resp == 200) 
                 TempData["msg"] = "Usuario Creado Con Exito";
@@ -39,9 +37,8 @@ namespace ClientePolicomerce.Controllers
         {
 
             ActionResult result;
-            UrlApi urlApi = new UrlApi();
-            UrlMethodos urlMethodos = new UrlMethodos(urlApi.ValidarUsuario(usuario), null);
-            var obj = urlMethodos.ValidarUser();
+            UrlMethodos urlMethodos = new UrlMethodos(null);
+            var obj = urlMethodos.ValidarUser(usuario);
             result = Json(obj);
             return result;
         }
@@ -52,8 +49,8 @@ namespace ClientePolicomerce.Controllers
         {
           ActionResult result;
           UrlApi urlApi = new UrlApi();
-          UrlMethodos urlMethodos = new UrlMethodos(urlApi.UrlMunicipio(iddep), null);
-           var obje = urlMethodos.Departamento_Municipio();
+          UrlMethodos urlMethodos = new UrlMethodos(null);
+            var obje = urlMethodos.Municipio(iddep);
             result = Json(obje);
             return result;
         }

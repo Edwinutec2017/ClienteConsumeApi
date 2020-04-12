@@ -1,4 +1,5 @@
 ﻿using Dto.Dto.Login;
+using Dto.Url;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,22 +14,20 @@ namespace ClientePolicomerce.Controllers
         {
             ActionResult result;
             if (!(Session["User"] is LoginDto ))
-            {
                 result = RedirectToAction("Index", "Login");
-            }
             else
                 result = View();
             return result;
         }
 
-        public ActionResult About()
+        public ActionResult Productos()
         {
-            ViewBag.Message = "Your application description page.";
-
+           // UrlMethodos urlMethodos = new UrlMethodos(null);
+            //ViewBag.Productos = urlMethodos.Productos();
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Servicios()
         {
             ViewBag.Message = "Your contact page.";
 

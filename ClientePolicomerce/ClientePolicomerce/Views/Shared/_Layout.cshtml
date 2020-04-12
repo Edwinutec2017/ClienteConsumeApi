@@ -13,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
     <link href="~/Content/Menu/Menu.css" rel="stylesheet" />
+    <link href="~/Content/Login/Login.css" rel="stylesheet" />
     @Styles.Render("~/Content/css")
 </head>
 <body>
@@ -33,15 +34,14 @@
                                 <h4>Bienvenido : @usuario.Nombre</h4>
                             </li>
 
-
-                            <li class="page_item page-item-2">
+                            <li class="page_item page-item-2" style="color:black">
                                 @Html.ActionLink("Inicio", "Index", "Home")
                             </li>
-                            <li class="page_item page-item-2">
-                                @Html.ActionLink("Catalogos", "About", "Home")
+                            <li class="page_item page-item-2" style="color:black">
+                                @Html.ActionLink("Productos", "Productos", "Home")
                             </li>
-                            <li class="page_item page-item-2">
-                                @Html.ActionLink("Pedidos", "Contact", "Home")
+                            <li class="page_item page-item-2" style="color:black">
+                                @Html.ActionLink("Servicios", "Servicios", "Home")
                             </li>
                             <li class="page_item page-item-2">
                                 <p>
@@ -63,7 +63,7 @@
             <p>&copy; @DateTime.Now.Year - Policomerce </p>
         </footer>
     </div>
-
+   
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
