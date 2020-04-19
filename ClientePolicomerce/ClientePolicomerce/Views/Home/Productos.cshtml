@@ -5,125 +5,95 @@
 <script src="~/Scripts/Tables/jquery-3.3.1.js"></script>
 <script src="~/Scripts/Tables/jquery.dataTables.min.js"></script>
 <link href="~/Content/Table/Estilo.css" rel="stylesheet" />
+
 <div class="jumbotron">
     <table id="example" class="table table-striped table-bordered">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
+                <th hidden>PRODUC1</th>
+                <th hidden>PRODUC2</th>
+                <th hidden>PRODUC3</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011/04/25</td>
-                <td>$320,800</td>
+                <td>
+                    <div class="card" style="width:300px;height:250px">
+
+                        <img src="~/Content/Img/Banner.jpg" style="width:300px;height:200px" />
+                        <div class="card-body">
+                            <input type="text" id="name" name="name" value="aasas" readonly disabled hidden />
+                            <input type="text" id="categoria" name="name" value="aasas" readonly disabled hidden />
+                            <input type="text" id="descripcion" name="descripcion" value="aasas" readonly disabled hidden />
+                            <input type="text" id="precio" name="precio" value="aasas" readonly disabled hidden />
+                            <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#exampleModalCenter">
+                                Launch demo modal
+                            </button>
+                        </div>
+                    </div>
+
+                </td>
+                <td>
+                    <div class="card" style="width:300px;height:250px">
+
+                        <img src="~/Content/Img/Banner.jpg" style="width:300px;height:200px" />
+                        <div class="card-body">
+                            <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#exampleModal">
+                                Launch demo modal
+                            </button>
+                        </div>
+                    </div>
+
+                </td>
+                <td>
+                    <div class="card" style="width:300px;height:250px">
+
+                        <img src="~/Content/Img/Banner.jpg" style="width:300px;height:200px" />
+                        <div class="card-body">
+                            <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#exampleModal"></button>
+                        </div>
+                    </div>
+
+                </td>
+
             </tr>
-            <tr>
-                <td>Garrett Winters</td>
-                <td>Accountant</td>
-                <td>Tokyo</td>
-                <td>63</td>
-                <td>2011/07/25</td>
-                <td>$170,750</td>
-            </tr>
-            <tr>
-                <td>Ashton Cox</td>
-                <td>Junior Technical Author</td>
-                <td>San Francisco</td>
-                <td>66</td>
-                <td>2009/01/12</td>
-                <td>$86,000</td>
-            </tr>
-            <tr>
-                <td>Cedric Kelly</td>
-                <td>Senior Javascript Developer</td>
-                <td>Edinburgh</td>
-                <td>22</td>
-                <td>2012/03/29</td>
-                <td>$433,060</td>
-            </tr>
-            <tr>
-                <td>Airi Satou</td>
-                <td>Accountant</td>
-                <td>Tokyo</td>
-                <td>33</td>
-                <td>2008/11/28</td>
-                <td>$162,700</td>
-            </tr>
-            <tr>
-                <td>Brielle Williamson</td>
-                <td>Integration Specialist</td>
-                <td>New York</td>
-                <td>61</td>
-                <td>2012/12/02</td>
-                <td>$372,000</td>
-            </tr>
-            <tr>
-                <td>Herrod Chandler</td>
-                <td>Sales Assistant</td>
-                <td>San Francisco</td>
-                <td>59</td>
-                <td>2012/08/06</td>
-                <td>$137,500</td>
-            </tr>
-            <tr>
-                <td>Rhona Davidson</td>
-                <td>Integration Specialist</td>
-                <td>Tokyo</td>
-                <td>55</td>
-                <td>2010/10/14</td>
-                <td>$327,900</td>
-            </tr>
-            <tr>
-                <td>Colleen Hurst</td>
-                <td>Javascript Developer</td>
-                <td>San Francisco</td>
-                <td>39</td>
-                <td>2009/09/15</td>
-                <td>$205,500</td>
-            </tr>
-            <tr>
-                <td>Brielle Williamson</td>
-                <td>Integration Specialist</td>
-                <td>New York</td>
-                <td>61</td>
-                <td>2012/12/02</td>
-                <td>$372,000</td>
-            </tr>
-            <tr>
-                <td>Herrod Chandler</td>
-                <td>Sales Assistant</td>
-                <td>San Francisco</td>
-                <td>59</td>
-                <td>2012/08/06</td>
-                <td>$137,500</td>
-            </tr>
-            <tr>
-                <td>Rhona Davidson</td>
-                <td>Integration Specialist</td>
-                <td>Tokyo</td>
-                <td>55</td>
-                <td>2010/10/14</td>
-                <td>$327,900</td>
-            </tr>
-            <tr>
-                <td>Colleen Hurst</td>
-                <td>Javascript Developer</td>
-                <td>San Francisco</td>
-                <td>39</td>
-                <td>2009/09/15</td>
-                <td>$205,500</td>
-            </tr>
+
+
+
+
         </tbody>
     </table>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">DESCRIPCION DEL PRODUCTO</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" >
+              
+                    <label>NOMBRE</label>
+                  <br />
+                    <label>NOMBRE</label>
+                  <br />
+                    <label>NOMBRE</label>
+                    <br />
+                    <label id="w3mission" rows="2" cols="40">
+                        At w3schools.com you will learn how to make a
+                    </label>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+ 
+
 <script src="~/Scripts/Tables/DataTable.js"></script>
 

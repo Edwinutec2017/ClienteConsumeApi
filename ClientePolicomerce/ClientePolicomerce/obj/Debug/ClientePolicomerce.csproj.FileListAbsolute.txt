@@ -177,6 +177,7 @@ C:\repositorios\ClienteConsumeApi\ClientePolicomerce\ClientePolicomerce\bin\WebG
 C:\repositorios\ClienteConsumeApi\ClientePolicomerce\ClientePolicomerce\bin\System.Net.Http.Formatting.dll
 C:\repositorios\ClienteConsumeApi\ClientePolicomerce\ClientePolicomerce\bin\Dto.pdb
 C:\repositorios\ClienteConsumeApi\ClientePolicomerce\ClientePolicomerce\bin\Dto.dll.config
+C:\repositorios\ClienteConsumeApi\ClientePolicomerce\ClientePolicomerce\bin\Newtonsoft.Json.xml
 C:\repositorios\ClienteConsumeApi\ClientePolicomerce\ClientePolicomerce\bin\System.Web.Helpers.xml
 C:\repositorios\ClienteConsumeApi\ClientePolicomerce\ClientePolicomerce\bin\System.Web.Mvc.xml
 C:\repositorios\ClienteConsumeApi\ClientePolicomerce\ClientePolicomerce\bin\System.Web.Optimization.xml
@@ -184,7 +185,6 @@ C:\repositorios\ClienteConsumeApi\ClientePolicomerce\ClientePolicomerce\bin\Syst
 C:\repositorios\ClienteConsumeApi\ClientePolicomerce\ClientePolicomerce\bin\System.Web.WebPages.xml
 C:\repositorios\ClienteConsumeApi\ClientePolicomerce\ClientePolicomerce\bin\System.Web.WebPages.Deployment.xml
 C:\repositorios\ClienteConsumeApi\ClientePolicomerce\ClientePolicomerce\bin\System.Web.WebPages.Razor.xml
-C:\repositorios\ClienteConsumeApi\ClientePolicomerce\ClientePolicomerce\bin\Newtonsoft.Json.xml
 C:\repositorios\ClienteConsumeApi\ClientePolicomerce\ClientePolicomerce\bin\Antlr3.Runtime.pdb
 C:\repositorios\ClienteConsumeApi\ClientePolicomerce\ClientePolicomerce\bin\System.Diagnostics.DiagnosticSource.xml
 C:\repositorios\ClienteConsumeApi\ClientePolicomerce\ClientePolicomerce\bin\Microsoft.AspNet.TelemetryCorrelation.xml
