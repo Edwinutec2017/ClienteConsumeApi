@@ -1,0 +1,40 @@
+﻿@{
+    Layout = null;
+    var mensaje= TempData["msg"];
+    var mensaje2 = TempData["status"];
+    ViewBag.Title = "Error";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Login/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Login/Login.css" rel="stylesheet" />
+    <link href="~/Content/Login/all.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card">
+                <div class="card-header">
+                    <img src="~/Content/Img/logo.jpg" width="250" height="100" />
+                    <h3 align="center" id="loginText">ERROR</h3>
+                </div>
+                <div class="card-body">
+
+                    <div>
+                     
+                        <h5 style="color:#ffffff">@mensaje</h5>
+                   
+                        <h5 style="color:white">@mensaje2</h5>
+
+                    </div>
+                    
+                    <a href="/Login/Index" class="btn btn-warning btn-block" role="button" aria-pressed="true">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

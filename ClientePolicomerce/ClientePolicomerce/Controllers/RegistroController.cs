@@ -10,9 +10,30 @@ namespace ClientePolicomerce.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            UrlMethodos urlMethodos = new UrlMethodos(null);
-            ViewBag.DepyMuni = urlMethodos.Departamento_Municipio(); 
-            return View();
+            ActionResult result;
+            try {
+                UrlMethodos urlMethodos = new UrlMethodos(null);
+                var dep = urlMethodos.Departamento_Municipio();
+                if (dep.Count > 0)
+                {
+                    ViewBag.DepyMuni = dep;
+                    result= View();
+                }
+                else {
+          
+                    TempData["msg"] = "Datos Para El Registro DE Usuario No Disponibles";
+                    TempData["status"] = "Status: 200";
+                    result = RedirectToAction("Error", "Login");
+                }
+            }
+            catch (Exception ex) {
+                Console.WriteLine($"Url No encontrada {ex.StackTrace}");
+                TempData["msg"] = "Registro de Usuario No Disponible.";
+                TempData["status"] = "Status: 400";
+                result = RedirectToAction("Error", "Login"); 
+            }
+
+            return result;
         }
 
         [HttpPost]

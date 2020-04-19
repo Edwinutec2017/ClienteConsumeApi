@@ -39,15 +39,16 @@ namespace ClientePolicomerce.Controllers
                         foreach (var user in datos) {
 
                             Session["User"] = new LoginDto { Codigo = user.Codigo, Nombre = user.Nombre };
-                          
+                            Session.Timeout = 8000;
                         }
                       
                         result = RedirectToAction("Index", "Home");
                     }
                     else
                     {
-                        TempData["msg"] = "Error de autenticacion..";
-                        result = View();
+                        TempData["msg"] = "Error de autenticacion.. Usuario O Password Icorrectos";
+                        TempData["status"] = "Status:200.";
+                        result = RedirectToAction("Error", "Login"); ;
                     }
                     
                 }
@@ -59,7 +60,10 @@ namespace ClientePolicomerce.Controllers
             }
             catch (Exception ex ) {
                 Console.WriteLine($"Error de Autenticacion {ex.StackTrace} ");
-                return View();
+                TempData["msg"] = "Servicio de autenticacion Inaccesible.";
+                TempData["status"] = "Status:400.";
+                result = RedirectToAction("Error", "Login"); ;
+                return result;
             }
             
         }
@@ -70,5 +74,10 @@ namespace ClientePolicomerce.Controllers
             TempData["msg"] = "";
             return RedirectToAction("Index", "Login"); ;
         }
+        public ActionResult Error() {
+            
+            return View();
+        }
+
     }
 }
