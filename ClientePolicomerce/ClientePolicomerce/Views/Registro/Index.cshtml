@@ -32,21 +32,27 @@
                 <div class="card" style="padding:10px;padding-top:25px">
 
                     <div class="input-group form-group">
+                        <h5 style="color:red">*</h5>
                         <input type="text" name="NOMBRE1" class="form-control" id="PrimerNombre" placeholder="Primer Nombre" required>
                     </div>
                     <div class="input-group form-group">
+                        <h5 style="color:red">*</h5>
                         <input type="text" name="NOMBRE2" class="form-control" id="nombre2" placeholder="Segundo Nombre">
                     </div>
                     <div class="input-group form-group">
+                        <h5 style="color:red">*</h5>
                         <input type="text" name="APELLIDO1" class="form-control" id="APELLIDO1" placeholder="Primer Apellido" required>
                     </div>
                     <div class="input-group form-group">
+                        <h5 style="color:green">*</h5>
                         <input type="text" name="APELLIDO2" class="form-control" id="apellido2" placeholder="Segundo Apellido">
                     </div>
                     <div class="input-group form-group">
+                        <h5 style="color:red">*</h5>
                         <input type="text" name="EDAD" class="form-control" id="EDAD" placeholder="EDAD" required maxlength="2">
                     </div>
                     <div class="input-group form-group">
+                        <h5 style="color:red">*</h5>
                         <select class="form-control" name="GENERO" required>
                             <option>Genero</option>
                             <option value='M'>Masculino</option>
@@ -59,9 +65,11 @@
                 </div>
                 <div class="card" style="padding:10px;padding-top:25px">
                     <div class="input-group form-group">
+                        <h5 style="color:red">*</h5>
                         <input type="tel" name="TELEFONO" class="form-control" id="telefono" placeholder="Telefono" required maxlength="28">
                     </div>
                     <div class="input-group form-group">
+                        <h5 style="color:red">*</h5>
                         <select class="form-control" onchange="CargarMunicipios()" name="Departamento" id="Departamento">
                             <option value=null>Departamento</option>
                             @foreach (var dep in ViewBag.DepyMuni)
@@ -72,6 +80,7 @@
                         </select>
                     </div>
                     <div class="input-group form-group">
+                        <h5 style="color:red">*</h5>
                         <select class="form-control" name="IDMUNICIPIO" id="IdMunicipio">
                             <option value="">Municipio</option>
 
@@ -79,12 +88,15 @@
 
                     </div>
                     <div class="input-group form-group">
+                        <h5 style="color:red">*</h5>
                         <input type="text" name="DIRECCION" class="form-control" id="DIRECCION" placeholder="Direccion">
                     </div>
                     <div class="input-group form-group">
+                        <h5 style="color:red">*</h5>
                         <input type="text" name="USUARIO" class="form-control" id="USUARIO" maxlength="8" placeholder="Usuario" required autofocus>
                     </div>
                     <div class="input-group form-group">
+                        <h5 style="color:red">*</h5>
                         <input type="password" name="CLAVE" class="form-control" id="CLAVE" onkeyup="OcultarBoton()" placeholder="Password" required>
                     </div>
 
@@ -93,9 +105,11 @@
 
                 <div class="card" style="padding:10px;padding-top:25px">
                     <div class="input-group form-group">
+                        <h5 style="color:red">*</h5>
                         <input type="password" name="pass2" onkeyup="MostrarBoton()" class="form-control" id="pass2" placeholder="Repita Password" required>
                     </div>
                     <div class="input-group form-group">
+                        <h5 style="color:red">*</h5>
                         <input type="email" name="CORREO" class="form-control" id="CORREO" placeholder="Email" required>
                     </div>
                     <div class="card-body">
