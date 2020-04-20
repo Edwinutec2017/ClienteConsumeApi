@@ -39,7 +39,7 @@ namespace ClientePolicomerce.Controllers
                         foreach (var user in datos) {
 
                             Session["User"] = new LoginDto { Codigo = user.Codigo, Nombre = user.Nombre };
-                            Session.Timeout = 8000;
+                            Session.Timeout = 90000;
                         }
                       
                         result = RedirectToAction("Index", "Home");

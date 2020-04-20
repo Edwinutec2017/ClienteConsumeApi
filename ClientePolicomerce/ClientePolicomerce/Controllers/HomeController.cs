@@ -22,8 +22,8 @@ namespace ClientePolicomerce.Controllers
 
         public ActionResult Productos()
         {
-           // UrlMethodos urlMethodos = new UrlMethodos(null);
-            //ViewBag.Productos = urlMethodos.Productos();
+           UrlMethodos urlMethodos = new UrlMethodos(null);
+           ViewBag.Productos = urlMethodos.Productos();
             return View();
         }
 
