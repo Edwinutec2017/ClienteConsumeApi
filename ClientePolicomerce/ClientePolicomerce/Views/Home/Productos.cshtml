@@ -1,122 +1,77 @@
 ﻿@{
     ViewBag.Title = "Productos";
 }
-
 <script src="~/Scripts/Tables/jquery-3.3.1.js"></script>
-
+<script src="~/Scripts/Tables/jquery.dataTables.min.js"></script>
 <link href="~/Content/Table/Estilo.css" rel="stylesheet" />
-
+<link href="~/Content/Table/jquery.dataTables.min.css" rel="stylesheet" />
 <div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <div>
+        CARROUSEL
 
-    <div class="producto">
-        <div class="row center-xs">
+    </div>
+
+    <table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th style="text-align:center;background-color:black;color:white">CATEGORIA</th>
+                <th style="text-align:center;background-color:black;color:white">NOMBRE</th>
+                <th style="text-align:justify;background-color:black;color:white">DESCRIPCION</th>
+                <th style="background-color:black;color:white">IMAGEN</th>
+            </tr>
+        </thead>
+        <tbody>
             @foreach (var produc in ViewBag.Productos)
             {
-                <div class="col-xs-10 col-sm-6 col-md-4 product" style="">
-                    <div class="card">
-                        <div class="col-xs-10 col-sm-6 col-md-4 product" style="">
-                            <div class="card">
-                                <img src="data:image/png;base64,@produc.Imagen"  width="200" height="200"/>
-                               
-                                <input type="text" id="name" name="name" value="aasas" readonly disabled hidden />
-                                <input type="text" id="categoria" name="name" value="aasas" readonly disabled hidden />
-                                <input type="text" id="descripcion" name="descripcion" value="aasas" readonly disabled hidden />
-                                <input type="text" id="precio" name="precio" value="aasas" readonly disabled hidden />
-                                <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#exampleModalCenter">
-                                    Launch demo modal
-                                </button>
-                            </div>
-                            <br />
+            <tr>
+                <td style="text-align:center;font-size:13px"><h3>@produc.Categoria</h3></td>
+                <td style="text-align:center;font-size:13px"><h4>@produc.Nombre</h4></td>
+                <td style="text-align:justify;font-size:13px;"><h4>@produc.Descripcion</h4></td>
+                <td>
+                    <div class="col-xs-10 col-sm-6 col-md-4 product" style="padding:10px">
+                        <div class="card">
+                            <img src="data:image/png;base64,@produc.Imagen" />
+                            @{
+                                <input type="text" id="codigo" name="codigo" value="@produc.Codigo" readonly disabled hidden />
+                                <input type="text" id="name" name="name" value="@produc.Nombre" readonly disabled hidden />
+                                <input type="text" id="categoria" name="name" value="@produc.Categoria" readonly disabled hidden />
+                                <input type="text" id="descripcion" name="descripcion" value="@produc.Descripcion" readonly disabled hidden />
+                                <input type="text" id="precio" name="precio" value="@produc.Precio" readonly disabled hidden />
+
+                            }
+
+                            <button type="button" class="btn btn-primary btn-block " data-toggle="modal" data-target="#exampleModalCenter">
+                                <span class="glyphicon glyphicon-menu-hamburger"></span> DETALLE
+                            </button>
                         </div>
-                        <img src="~/Content/Img/Banner.jpg" />
-                        <input type="text" id="name" name="name" value="aasas" readonly disabled hidden />
-                        <input type="text" id="categoria" name="name" value="aasas" readonly disabled hidden />
-                        <input type="text" id="descripcion" name="descripcion" value="aasas" readonly disabled hidden />
-                        <input type="text" id="precio" name="precio" value="aasas" readonly disabled hidden />
-                        <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#exampleModalCenter">
-                            Launch demo modal
-                        </button>
                     </div>
-                    <br />
-                </div>
+                </td>
+            </tr>
 
             }
 
-            <div class="col-xs-10 col-sm-6 col-md-4 product" style="">
-                <div class="card">
-                    <img src="~/Content/Img/Banner.jpg" />
-                    <input type="text" id="name" name="name" value="aasas" readonly disabled hidden />
-                    <input type="text" id="categoria" name="name" value="aasas" readonly disabled hidden />
-                    <input type="text" id="descripcion" name="descripcion" value="aasas" readonly disabled hidden />
-                    <input type="text" id="precio" name="precio" value="aasas" readonly disabled hidden />
-                    <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#exampleModalCenter">
-                        Launch demo modal
-                    </button>
-                </div>
-                <br />
-            </div>
-            <div class="col-xs-10 col-sm-6 col-md-4 product" style="">
-                <div class="card">
-                    <img src="~/Content/Img/Banner.jpg" />
-                    <input type="text" id="name" name="name" value="aasas" readonly disabled hidden />
-                    <input type="text" id="categoria" name="name" value="aasas" readonly disabled hidden />
-                    <input type="text" id="descripcion" name="descripcion" value="aasas" readonly disabled hidden />
-                    <input type="text" id="precio" name="precio" value="aasas" readonly disabled hidden />
-                    <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#exampleModalCenter">
-                        Launch demo modal
-                    </button>
-                </div>
-                <br />
-            </div>
-            <div class="col-xs-10 col-sm-6 col-md-4 product" style="">
-                <div class="card">
-                    <img src="~/Content/Img/Banner.jpg" />
-                    <input type="text" id="name" name="name" value="aasas" readonly disabled hidden />
-                    <input type="text" id="categoria" name="name" value="aasas" readonly disabled hidden />
-                    <input type="text" id="descripcion" name="descripcion" value="aasas" readonly disabled hidden />
-                    <input type="text" id="precio" name="precio" value="aasas" readonly disabled hidden />
-                    <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#exampleModalCenter">
-                        Launch demo modal
-                    </button>
-                </div>
-                <br />
-            </div>
-            <div class="col-xs-10 col-sm-6 col-md-4 product" style="">
-                <div class="card">
-                    <img src="~/Content/Img/Banner.jpg" />
-                    <input type="text" id="name" name="name" value="aasas" readonly disabled hidden />
-                    <input type="text" id="categoria" name="name" value="aasas" readonly disabled hidden />
-                    <input type="text" id="descripcion" name="descripcion" value="aasas" readonly disabled hidden />
-                    <input type="text" id="precio" name="precio" value="aasas" readonly disabled hidden />
-                    <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#exampleModalCenter">
-                        Launch demo modal
-                    </button>
-                </div>
-                <br />
-            </div>
+        </tbody>
 
-
-        </div>
-
-
-
-
+    </table>
     <!-- Modal -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
+                    <img src="~/Content/Img/logo.jpg" class="img" />
                     <h5 class="modal-title" id="exampleModalLongTitle">DESCRIPCION DEL PRODUCTO</h5>
+
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body" >
-              
+                <div class="modal-body">
+
                     <label>NOMBRE</label>
-                  <br />
+                    <br />
                     <label>NOMBRE</label>
-                  <br />
+                    <br />
                     <label>NOMBRE</label>
                     <br />
                     <label id="w3mission" rows="2" cols="40">
@@ -125,13 +80,15 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    
+
                 </div>
             </div>
         </div>
     </div>
+
 </div>
- 
+
+<div class="row">
+   
 </div>
 <script src="~/Scripts/Tables/DataTable.js"></script>
-

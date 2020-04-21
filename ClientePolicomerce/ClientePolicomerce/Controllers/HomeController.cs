@@ -13,8 +13,10 @@ namespace ClientePolicomerce.Controllers
         public ActionResult Index()
         {
             ActionResult result;
-            if (!(Session["User"] is LoginDto ))
+            if (!(Session["User"] is LoginDto)) {
+                Session.Timeout = 90000;
                 result = RedirectToAction("Index", "Login");
+            }
             else
                 result = View();
             return result;
