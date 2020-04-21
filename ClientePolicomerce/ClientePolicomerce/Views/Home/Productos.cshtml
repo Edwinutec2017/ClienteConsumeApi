@@ -12,36 +12,31 @@
 
     </div>
 
-    <table id="example" class="display" style="width:100%">
+    <table id="example" class="display">
         <thead>
             <tr>
+                <th style="text-align:center" hidden>CODIGO</th>
+                <th style="text-align:center" hidden>PRECIO</th>
                 <th style="text-align:center;background-color:black;color:white">CATEGORIA</th>
                 <th style="text-align:center;background-color:black;color:white">NOMBRE</th>
-                <th style="text-align:justify;background-color:black;color:white">DESCRIPCION</th>
-                <th style="background-color:black;color:white">IMAGEN</th>
+                <th style="text-align:justify;background-color:black;color:white" hidden>DESCRIPCION</th>
+                <th style="text-align:center;background-color:black;color:white">IMAGEN</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var produc in ViewBag.Productos)
             {
             <tr>
-                <td style="text-align:center;font-size:13px"><h3>@produc.Categoria</h3></td>
-                <td style="text-align:center;font-size:13px"><h4>@produc.Nombre</h4></td>
-                <td style="text-align:justify;font-size:13px;"><h4>@produc.Descripcion</h4></td>
+                <td style="text-align:center;font-size:13px" hidden>@produc.Codigo</td>
+                <td style="text-align:center;font-size:13px" hidden>@produc.Precio</td>
+                <td style="text-align:left;font-size:16px">@produc.Categoria</td>
+                <td style="text-align:justify;font-size:16px">@produc.Nombre</td>
+                <td style="text-align:left;font-size:13px;" hidden>@produc.Descripcion</td>
                 <td>
                     <div class="col-xs-10 col-sm-6 col-md-4 product" style="padding:10px">
                         <div class="card">
                             <img src="data:image/png;base64,@produc.Imagen" />
-                            @{
-                                <input type="text" id="codigo" name="codigo" value="@produc.Codigo" readonly disabled hidden />
-                                <input type="text" id="name" name="name" value="@produc.Nombre" readonly disabled hidden />
-                                <input type="text" id="categoria" name="name" value="@produc.Categoria" readonly disabled hidden />
-                                <input type="text" id="descripcion" name="descripcion" value="@produc.Descripcion" readonly disabled hidden />
-                                <input type="text" id="precio" name="precio" value="@produc.Precio" readonly disabled hidden />
-
-                            }
-
-                            <button type="button" class="btn btn-primary btn-block " data-toggle="modal" data-target="#exampleModalCenter">
+                            <button type="button" class="btn btn-primary btn-block prodt" style="padding-top:5PX" data-toggle="modal" data-target="#exampleModalCenter">
                                 <span class="glyphicon glyphicon-menu-hamburger"></span> DETALLE
                             </button>
                         </div>
@@ -56,23 +51,19 @@
     </table>
     <!-- Modal -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-dialog modal-dialog-centered" id="pp" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <img src="~/Content/Img/logo.jpg" class="img" />
-                    <h5 class="modal-title" id="exampleModalLongTitle">DESCRIPCION DEL PRODUCTO</h5>
-
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <h4 class="modal-title" id="exampleModalLongTitle">DESCRIPCION DEL PRODUCTO</h4>
                 </div>
                 <div class="modal-body">
 
-                    <label>NOMBRE</label>
+                   <h4 id="cod" style="text-align:justify"></h4>
                     <br />
-                    <label>NOMBRE</label>
+                    <label id="catego">NOMBRE</label>
                     <br />
-                    <label>NOMBRE</label>
+                    <label id="name">NOMBRE</label>
                     <br />
                     <label id="w3mission" rows="2" cols="40">
                         At w3schools.com you will learn how to make a

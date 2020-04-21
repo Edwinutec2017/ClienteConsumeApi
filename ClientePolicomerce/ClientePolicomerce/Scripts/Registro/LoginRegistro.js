@@ -61,6 +61,7 @@ function ValidarUsuario() {
             document.getElementById('pass2').style.backgroundColor = 'white';
             OcultarBoton();
         } else if (accion == 1) {
+            document.getElementById('USUARIO').style.backgroundColor = 'green';
             document.getElementById('conte').innerHTML = 'Usuario valido ';
             document.getElementById('pass2').style.backgroundColor = 'green';
 
