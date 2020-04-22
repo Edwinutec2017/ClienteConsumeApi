@@ -174,6 +174,24 @@ namespace Dto.Url
          
         }
         #endregion
+        #region SERVICIOS TODOS
+        public List<Productos> Servicios() {
+            try {
+                List<Productos> _servicicio = new List<Productos>();
+                urlApi = api.UrlListaServicios();
+                var result = Get();
+                if (result.IsSuccessStatusCode) {
+                    _servicicio = result.Content.ReadAsAsync<List<Productos>>().Result;
+                }
+                return _servicicio;
+            }
+            catch (Exception ex) {
+                Console.WriteLine($"Error al Traer Servicios {ex.StackTrace}");
+                return null;
+            }
+
+        }
+        #endregion
         #region METODOS URL
         private HttpResponseMessage Post() {
 

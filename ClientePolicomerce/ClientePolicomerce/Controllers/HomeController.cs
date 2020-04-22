@@ -31,7 +31,8 @@ namespace ClientePolicomerce.Controllers
 
         public ActionResult Servicios()
         {
-            ViewBag.Message = "Your contact page.";
+            UrlMethodos urlMethodos = new UrlMethodos(null);
+            ViewBag.Servicios = urlMethodos.Servicios();
 
             return View();
         }

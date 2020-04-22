@@ -6,21 +6,21 @@
 <link href="~/Content/Table/Estilo.css" rel="stylesheet" />
 <link href="~/Content/Table/jquery.dataTables.min.css" rel="stylesheet" />
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
+    <h1>banner</h1>
     <div>
         CARROUSEL
 
     </div>
-
-    <table id="example" class="display">
+    <table id="productotb" class="display">
         <thead>
             <tr>
                 <th style="text-align:center" hidden>CODIGO</th>
-                <th style="text-align:center" hidden>PRECIO</th>
-                <th style="text-align:center;background-color:black;color:white">CATEGORIA</th>
                 <th style="text-align:center;background-color:black;color:white">NOMBRE</th>
-                <th style="text-align:justify;background-color:black;color:white" hidden>DESCRIPCION</th>
-                <th style="text-align:center;background-color:black;color:white">IMAGEN</th>
+                <th style="text-align:center;background-color:black;color:white">CATEGORIA</th>
+                <th style="text-align:center;background-color:black;color:white">DESCRIPCION</th>
+                <th style="text-align:justify;background-color:black;color:white" hidden>PRECIO</th>
+                <th style="text-align:left;background-color:black;color:white">IMAGEN</th>
+                <th style="text-align:left;background-color:black;color:white" hidden>IMAGEN</th>
             </tr>
         </thead>
         <tbody>
@@ -28,46 +28,58 @@
             {
             <tr>
                 <td style="text-align:center;font-size:13px" hidden>@produc.Codigo</td>
-                <td style="text-align:center;font-size:13px" hidden>@produc.Precio</td>
+                <td style="text-align:center;font-size:16px">@produc.Nombre</td>
                 <td style="text-align:left;font-size:16px">@produc.Categoria</td>
-                <td style="text-align:justify;font-size:16px">@produc.Nombre</td>
-                <td style="text-align:left;font-size:13px;" hidden>@produc.Descripcion</td>
+                <td style="text-align:justify;font-size:16px">@produc.Descripcion</td>
+                <td style="text-align:left;font-size:13px;" hidden>@produc.Precio</td>
                 <td>
                     <div class="col-xs-10 col-sm-6 col-md-4 product" style="padding:10px">
                         <div class="card">
                             <img src="data:image/png;base64,@produc.Imagen" />
-                            <button type="button" class="btn btn-primary btn-block prodt" style="padding-top:5PX" data-toggle="modal" data-target="#exampleModalCenter">
+
+                            <button type="button" class="btn btn-primary btn-block prodt" style="padding-top:10PX" data-toggle="modal" data-target="#productodetalle">
                                 <span class="glyphicon glyphicon-menu-hamburger"></span> DETALLE
                             </button>
                         </div>
                     </div>
                 </td>
+                <td style="text-align:left;font-size:13px;" hidden>@produc.Imagen</td>
             </tr>
-
             }
-
         </tbody>
-
     </table>
     <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="productodetalle" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" id="pp" role="document">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header" style="align-content:center">
                     <img src="~/Content/Img/logo.jpg" class="img" />
-                    <h4 class="modal-title" id="exampleModalLongTitle">DESCRIPCION DEL PRODUCTO</h4>
+                    <h4 class="modal-title" style="text-align:center" id="exampleModalLongTitle">DESCRIPCION DEL PRODUCTO</h4>
                 </div>
                 <div class="modal-body">
 
-                   <h4 id="cod" style="text-align:justify"></h4>
-                    <br />
-                    <label id="catego">NOMBRE</label>
-                    <br />
-                    <label id="name">NOMBRE</label>
-                    <br />
-                    <label id="w3mission" rows="2" cols="40">
-                        At w3schools.com you will learn how to make a
-                    </label>
+                    <table>
+                        <thead>
+                            <tr id="imgpp">
+
+                                <td></td>
+                            </tr>
+                            
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><h4 id="categoria" style="text-align:justify" /></td>
+                                <td><h4 id="cod" style="text-align:justify" /></td>
+
+
+                            </tr>
+                            <tr>
+                                <td><h4 id="nombre" style="text-align:justify" /></td>
+                                <td><h4 id="precio" style="text-align:justify" /></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -78,7 +90,6 @@
     </div>
 
 </div>
-
 <div class="row">
    
 </div>

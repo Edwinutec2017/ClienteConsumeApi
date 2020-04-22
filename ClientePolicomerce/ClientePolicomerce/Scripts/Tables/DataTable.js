@@ -1,14 +1,34 @@
 ﻿$(document).ready(function () {
-    $('#example').DataTable();
+    $('#productotb').DataTable();
     $(document).on('click', '.prodt', function () {
 
-        var table = $('#example').DataTable();
+        var table = $('#productotb').DataTable();
         var data = table.row($(this).closest('tr')).data();
-    
+   
+        $('#cod').html('CODIGO  : ' + data[0]);
+        $('#nombre').html('NOMBRE  : ' + data[1]);
+        $('#categoria').html('CATEGORIA  : ' + data[2]);
+        $('#precio').html('PRECIO  $ : ' + data[4]);
+        $('#imgpp').html('<td><img id="imgprod" src="data:image/png;base64,' + data[6] + '" width="200" height="100" /></td>');
 
-        $('#cod').html('Codigo  : ' + data[0]);
-        codigo = "";
-       
+    });
+
+});
+
+
+$(document).ready(function () {
+    $('#serviciostb').DataTable();
+    $(document).on('click', '.servi', function () {
+
+        var table = $('#serviciostb').DataTable();
+        var data = table.row($(this).closest('tr')).data();
+
+        $('#cod').html('CODIGO  : ' + data[0]);
+        $('#nombre').html('NOMBRE  : ' + data[1]);
+        $('#categoria').html('CATEGORIA  : ' + data[2]);
+        $('#precio').html('PRECIO  $ : ' + data[4]);
+        $('#imgserv').html('<td><img id="imgser" src="data:image/png;base64,' + data[6] +'" width="200" height="100" /></td>');
+        
     });
 
 });
