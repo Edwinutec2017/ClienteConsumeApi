@@ -177,6 +177,7 @@
     <Content Include="Content\Img\banner1.jpg" />
     <Content Include="Content\Img\banner2.jpg" />
     <Content Include="Content\Img\banner3.jpg" />
+    <Content Include="Content\Img\bannerProducto.jpg" />
     <Content Include="Content\Img\logo.jpg" />
     <Content Include="Content\Login\all.css" />
     <Content Include="Content\Login\bootstrap.min.css" />

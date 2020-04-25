@@ -1,9 +1,12 @@
 ﻿table {
 width:100%;
 background-color:white;
-
+padding:5px;
 }
-
+.rowest {
+    background-color: #eeeeee;
+    padding-top: 30px;
+}
 .img {
 width:200px;
 height:100px;

@@ -5,54 +5,58 @@
 <script src="~/Scripts/Tables/jquery.dataTables.min.js"></script>
 <link href="~/Content/Table/Estilo.css" rel="stylesheet" />
 <link href="~/Content/Table/jquery.dataTables.min.css" rel="stylesheet" />
-<div class="jumbotron">
-    <h1>banner</h1>
+
+
+<div class="row rowest">
     <div>
-        CARROUSEL
+        prueba
+    </div>
+    <div>
+        prueba
+    </div>
+    <div>
+        <table id="serviciostb" class="display">
+            <thead>
+                <tr>
+                    <th style="text-align:center" hidden>CODIGO</th>
+                    <th style="text-align:center;background-color:black;color:white">NOMBRE</th>
+                    <th style="text-align:center;background-color:black;color:white">CATEGORIA</th>
+                    <th style="text-align:center;background-color:black;color:white">DESCRIPCION</th>
+                    <th style="text-align:justify;background-color:black;color:white" hidden>PRECIO</th>
+                    <th style="text-align:left;background-color:black;color:white">IMAGEN</th>
+                    <th style="text-align:left;background-color:black;color:white" hidden>IMAGEN</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var servicios in ViewBag.Servicios)
+                {
+                    <tr>
+
+                        <td style="text-align:center;font-size:13px" hidden>@servicios.Codigo</td>
+                        <td style="text-align:center;font-size:16px">@servicios.Nombre</td>
+                        <td style="text-align:left;font-size:16px">@servicios.Categoria</td>
+                        <td style="text-align:justify;font-size:16px">@servicios.Descripcion</td>
+                        <td style="text-align:left;font-size:13px;" hidden>@servicios.Precio</td>
+                        <td>
+                            <div class="col-xs-10 col-sm-6 col-md-4 product" style="padding:10px">
+                                <div class="card">
+                                    <img src="data:image/png;base64,@servicios.Imagen" />
+
+                                    <button type="button" class="btn btn-primary btn-block servi" style="padding-top:10px" data-toggle="modal" data-target="#serviciosdetalle">
+                                        <span class="glyphicon glyphicon-menu-hamburger"></span> DETALLE
+                                    </button>
+                                </div>
+                            </div>
+                        </td>
+                        <td style="text-align:left;font-size:13px;" hidden>@servicios.Imagen</td>
+                    </tr>
+
+                }
+
+            </tbody>
+        </table>
 
     </div>
-
-    <table id="serviciostb" class="display">
-        <thead>
-            <tr>
-                <th style="text-align:center" hidden>CODIGO</th>
-                <th style="text-align:center;background-color:black;color:white">NOMBRE</th>
-                <th style="text-align:center;background-color:black;color:white">CATEGORIA</th>
-                <th style="text-align:center;background-color:black;color:white">DESCRIPCION</th>
-                <th style="text-align:justify;background-color:black;color:white" hidden>PRECIO</th>
-                <th style="text-align:left;background-color:black;color:white">IMAGEN</th>
-                <th style="text-align:left;background-color:black;color:white" hidden>IMAGEN</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var servicios in ViewBag.Servicios)
-            {
-            <tr>
-
-                <td style="text-align:center;font-size:13px" hidden>@servicios.Codigo</td>
-                <td style="text-align:center;font-size:16px">@servicios.Nombre</td>
-                <td style="text-align:left;font-size:16px">@servicios.Categoria</td>
-                <td style="text-align:justify;font-size:16px">@servicios.Descripcion</td>
-                <td style="text-align:left;font-size:13px;" hidden>@servicios.Precio</td>
-                <td>
-                    <div class="col-xs-10 col-sm-6 col-md-4 product" style="padding:10px">
-                        <div class="card">
-                            <img src="data:image/png;base64,@servicios.Imagen"/>
-
-                            <button type="button" class="btn btn-primary btn-block servi" style="padding-top:10px" data-toggle="modal" data-target="#serviciosdetalle">
-                                <span class="glyphicon glyphicon-menu-hamburger"></span> DETALLE
-                            </button>
-                        </div>
-                    </div>
-                </td>
-                <td style="text-align:left;font-size:13px;" hidden>@servicios.Imagen</td>
-            </tr>
-
-            }
-
-        </tbody>
-    </table>
-    <!-- Modal -->
     <div class="modal fade" id="serviciosdetalle" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" id="pp" role="document">
             <div class="modal-content">
@@ -85,10 +89,6 @@
             </div>
         </div>
     </div>
-
-</div>
-
-<div class="row">
 
 </div>
 <script src="~/Scripts/Tables/DataTable.js"></script>
