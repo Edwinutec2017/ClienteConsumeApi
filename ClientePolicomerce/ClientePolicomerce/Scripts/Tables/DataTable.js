@@ -57,7 +57,7 @@ function LimpiarTotal() {
     $('#totalglobal').val("0")
     $('#productocant').val("0");
     $('#mensaje').html("");
-
+    $('#mensaje2').html("");
 }
 function totalfinal() {
    
@@ -136,11 +136,11 @@ $(document).ready(function () {
 
         var table = $('#serviciostb').DataTable();
         var data = table.row($(this).closest('tr')).data();
-        $('#cod').html('CODIGO  : ' + data[0]);
-        $('#nombre').html('NOMBRE  : ' + data[1]);
-        $('#categoria').html('CATEGORIA  : ' + data[2]);
-        $('#precio').html('PRECIO  $ : ' + data[4]);
-        $('#imgserv').html('<td><img id="imgser" src="data:image/png;base64,' + data[6] +'" width="200" height="100" /></td>');
+        $('#cod').val([0]);
+        $('#nombre').val(data[1]);
+        $('#categoria').val(data[2]);
+        $('#precio').val(data[4]);
+        $('#imgpp').html('<td><img id="imgser" src="data:image/png;base64,' + data[6] +'" width="200" height="100" /></td>');
         
     });
 

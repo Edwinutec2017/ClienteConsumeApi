@@ -72,13 +72,16 @@ font-weight:900;
     border: 1PX;
 }
 .formpedido {
-    width: 800px;
+    width: 100%;
     padding: 10px;
+    
 }
 .conten {
     width: 200px;
     float: left;
-    padding-bottom: 35px
+    padding-bottom: 35px;
+    
+    
 }
 .texobli {
     color: red;
@@ -88,9 +91,11 @@ font-weight:900;
 .divpedido {
     border-radius: 8px;
     box-shadow: 0 1px 2px rgba(0,0,0,0.20),0 1px 2px rgba(0,0,0,0.20);
-    height: 250px;
-    width: 750px;
-    background-color: white
+    height:200px;
+    width: 100%;
+    background-color: white;
+    padding:10px;
+       
 }
 .btnmodal {
 width:170px;

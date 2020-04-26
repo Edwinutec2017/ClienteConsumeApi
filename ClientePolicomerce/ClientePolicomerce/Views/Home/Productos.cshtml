@@ -20,6 +20,15 @@
         <label style="padding-left:15px">Los campos con <span class="texobli">*</span> son obligatorios</label>
         <div class="formpedido">
             <div class="conten">
+                <label>Fecha Pedido:</label>
+                <input type="text" name="pedidofecha" id="pedidofecha" value="@DateTime.Now.ToString("dd-MM-yyyy")" class="form-control inputpedido" readonly disabled>
+                <br />
+         
+                <button type="button" class="btn btn-danger btn-block inputpedido" style="padding-top:10PX" data-toggle="modal" data-target="#EliminarPedido">
+                    <span class="glyphicon glyphicon-remove"></span> CANCELAR
+                </button>
+            </div>
+            <div class="conten">
                 <label>Tipo de Documento</label>
                 <span class="texobli">*</span>
                 <select class="form-control inputpedido" name="doc" id="doc" required>
@@ -29,15 +38,13 @@
                         <option value='@doc.CODIGO'>@doc.NOMBRE</option>
                     }
 
-
                 </select>
                 <br />
-                <label>Fecha Pedido:</label>
-                <input type="text" name="pedidofecha" id="pedidofecha" value="@DateTime.Now.ToString("dd-MM-yyyy")" class="form-control inputpedido" readonly disabled>
-                <br />
-                <button type="button" class="btn btn-danger btn-block inputpedido" style="padding-top:10PX" data-toggle="modal"  data-target="#EliminarPedido">
-                    <span class="glyphicon glyphicon-remove"></span> CANCELAR
+                <button type="button" class="btn btn-primary btn-block inputpedido" onclick="RegistrarPedido()" style="padding-top:10PX">
+                    <span class="glyphicon glyphicon-ok"></span> Guardar
                 </button>
+
+                <br>
             </div>
             <div class="conten">
                 <label>Tipo de Pago</label><span class="texobli">*</span>
@@ -50,15 +57,13 @@
 
                 </select>
                 <br />
+            </div>
+            <div class="conten">
                 <label>Nombre Cliente</label>
                 <label id="codclien" hidden>@usuario.Codigo</label>
                 <input type="text" name="cliente" value="@usuario.Nombre" class="form-control inputpedido" readonly disabled />
                 <br />
-                <button type="button" class="btn btn-primary btn-block inputpedido" onclick="RegistrarPedido()" style="padding-top:10PX">
-                    <span class="glyphicon glyphicon-ok"></span> Guardar
-                </button>
 
-                <br>
             </div>
             <div class="conten">
                 <label>Total Pedido $ :</label>
@@ -112,7 +117,7 @@
                 }
             </tbody>
         </table>
-        <!-- Modal -->
+        <!-- Modal detalle -->
         <div class="modal fade" id="productodetalle" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" id="pp" role="document">
                 <div class="modal-content">
@@ -190,6 +195,8 @@
                 </div>
             </div>
         </div>
+
+        <!--alerta-->
         <div class="modal fade modalalert" id="EliminarPedido" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -198,9 +205,7 @@
 
                     </div>
                     <div class="modal-body">
-                        <h1>
-                            <img src="~/Content/Img/logo.jpg" class="imglogo" />
-                        </h1>
+                       
                         <h1 style="text-align:center">
 
                             <img src="~/Content/Img/adventencia.jpg" class="imgalerta" />

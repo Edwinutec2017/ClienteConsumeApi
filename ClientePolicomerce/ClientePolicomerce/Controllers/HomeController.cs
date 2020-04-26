@@ -40,7 +40,8 @@ namespace ClientePolicomerce.Controllers
         {
             UrlMethodos urlMethodos = new UrlMethodos(null);
             ViewBag.Servicios = urlMethodos.Servicios();
-
+            ViewBag.tipoPago = urlMethodos.TipoPago();
+            ViewBag.tipoDocumento = urlMethodos.TipoDocuemto();
             return View();
         }
         [HttpPost]
