@@ -13,6 +13,8 @@ namespace ClientePolicomerce.Controllers
         public ActionResult Index()
         {
             ActionResult result;
+        
+
             if (!(Session["User"] is LoginDto)) {
                 Session.Timeout = 90000;
                 result = RedirectToAction("Index", "Login");
@@ -24,8 +26,10 @@ namespace ClientePolicomerce.Controllers
 
         public ActionResult Productos()
         {
-           UrlMethodos urlMethodos = new UrlMethodos(null);
-           ViewBag.Productos = urlMethodos.Productos();
+            UrlMethodos urlMethodos = new UrlMethodos(null);
+            ViewBag.Productos = urlMethodos.Productos();
+            ViewBag.tipoPago=urlMethodos.TipoPago();
+            ViewBag.tipoDocumento=urlMethodos.TipoDocuemto();
             return View();
         }
 

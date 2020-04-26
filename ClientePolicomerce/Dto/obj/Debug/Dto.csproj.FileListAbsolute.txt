@@ -10,8 +10,8 @@ C:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\bin\Debug\Newtonsoft.Js
 C:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\bin\Debug\System.Net.Http.Formatting.dll
 C:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\bin\Debug\Newtonsoft.Json.xml
 C:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\bin\Debug\System.Net.Http.Formatting.xml
+C:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\obj\Debug\Dto.csprojAssemblyReference.cache
 C:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\obj\Debug\Dto.csproj.CoreCompileInputs.cache
 C:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\obj\Debug\Dto.csproj.CopyComplete
 C:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\obj\Debug\Dto.dll
 C:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\obj\Debug\Dto.pdb
-C:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\obj\Debug\Dto.csprojAssemblyReference.cache

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Dto.Dto.Productos
 {
-   public class Productos
+    #region PRODUTOS Y SERVICIOS
+    public class Productos
     {
 
             public int Codigo { get; set; }
@@ -16,6 +17,19 @@ namespace Dto.Dto.Productos
             public string Nombre { get; set; }
             public decimal Precio { get; set; }      
     }
+    #endregion
+    #region PARA DOCUMENTO Y TIPO PAGO
+    public class DocumentoyPago
+    {
+        public int CODIGO { get; set; }
+        public string NOMBRE { get; set; }
+    }
+    #endregion
+    #region PARA NUMERO MAXIMO Y GENERAR EL CODIGO PEDIDO
+    public class NumPedido
+    {
+        public int NumeroPedido { get; set; }
 
- 
+    }
+    #endregion
 }

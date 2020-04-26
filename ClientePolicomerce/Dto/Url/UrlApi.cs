@@ -8,34 +8,65 @@ namespace Dto.Url
 {
     public class UrlApi
     {
+        #region HOST
         private readonly string host = "http://localhost:8080/";
+        #endregion
 
+        #region UrlLogin
         public string UrlLogin()
         {
             return $"{host}ords/policomerce/policomerce/login";
         }
+        #endregion
+        #region UrlDepartamento
         public string UrlDepartamento()
         {
             return $"{host}ords/policomerce/policomerce/departamento/"; ;
         }
+        #endregion
+        #region UrlMunicipio
         public string UrlMunicipio(int id)
         {
             return $"{host}ords/policomerce/policomerce/municipios/?ID={id}"; ;
         }
+        #endregion
+        #region UrlValidarUsuario
         public string UrlValidarUsuario(string nombre)
         {
             return $"{host}ords/policomerce/policomerce/usuarios/?USUARIO={nombre}"; ;
         }
+        #endregion
+        #region UrlCrearUsuario
         public string UrlCrearUsuario() {
             return $"{host}ords/policomerce/policomerce/usuarios/";
         }
+        #endregion
+        #region UrlListaProductos
         public string UrlListaProductos() {
             return $"{host}ords/policomerce/policomerce/articulos/";
         }
+        #endregion
+        #region UrlListaServicios
         public string UrlListaServicios() {
             return $"{host}ords/policomerce/policomerce/servicios/";
         }
-
+        #endregion
+        #region UrlTipoPago
+        public string UrlTipoPago() {
+            return $"{host}ords/policomerce/policomerce/tipopago/";
+        }
+        #endregion
+        #region UrlTipoDocumento
+        public string UrlTipoDocumento() {
+            return $"{host}ords/policomerce/policomerce/documento/";
+        }
+        #endregion
+        #region UrlCodigoPedido
+        public string UrlCodigoPedido()
+        {
+            return $"{host}ords/policomerce/policomerce/numpedid";
+        }
+        #endregion
     }
 }
 

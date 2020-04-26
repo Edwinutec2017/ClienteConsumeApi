@@ -171,6 +171,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Img\adventencia.jpg" />
     <Content Include="Content\Img\Banner.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

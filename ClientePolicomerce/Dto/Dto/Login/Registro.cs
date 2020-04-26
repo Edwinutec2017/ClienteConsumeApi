@@ -1,7 +1,8 @@
 ﻿
 namespace Dto.Dto.Login
 {
-   public class Registro
+    #region REGISTRO USUARIO
+    public class Registro
     {
   
         public string APELLIDO1 { get; set; }
@@ -17,4 +18,19 @@ namespace Dto.Dto.Login
         public int TELEFONO { get; set; }
         public string USUARIO { get; set; }
     }
+    #endregion
+    #region RESPUESTA SI EL USUARIO FUE REGISTRADO
+    public class RespRegistro
+    {
+        public string Status { get; set; }
+
+    }
+    #endregion
+    #region VALIDAR USUARIO NO SE REPITA
+    public class ValidarUser
+    {
+        public string USUA { get; set; }
+
+    }
+    #endregion
 }

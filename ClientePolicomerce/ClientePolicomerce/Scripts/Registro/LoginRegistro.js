@@ -3,7 +3,7 @@
 function CargarMunicipios() {
     var departamento = document.getElementById('Departamento').value;
 
-    var municipio = document.getElementById('IdMunicipio')
+    var municipio = document.getElementById('IdMunicipio');
     municipio.innerHTML = '<option value="">Seleccione un Municipio...</option>'
  
     if (municipio !== '') {

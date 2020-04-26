@@ -27,6 +27,7 @@ namespace Dto.Url
         private static object ObjResp { set; get; }
         private UrlApi api;
         #endregion
+
         #region CONSTRUCTOR
         public UrlMethodos(object _objeto)
         {
@@ -34,6 +35,7 @@ namespace Dto.Url
             api = new UrlApi();
         }
         #endregion
+
         #region login
         public List<LoginDto> ValidarLogin()
         {
@@ -126,7 +128,6 @@ namespace Dto.Url
 
         }
         #endregion
-
         #region Registro Usuario
         public int RegistroUsuario()
         {
@@ -192,6 +193,93 @@ namespace Dto.Url
 
         }
         #endregion
+        #region TIPO PAGO
+        public List<DocumentoyPago> TipoPago()
+        {
+            List<DocumentoyPago> _pago = new List<DocumentoyPago>();
+            try
+            {
+                
+                urlApi = api.UrlTipoPago();
+                var result = Get();
+                if (result.IsSuccessStatusCode)
+                {
+                    _pago = result.Content.ReadAsAsync<List<DocumentoyPago>>().Result;
+                    if (_pago.Equals(null)) {
+                        _pago = null;
+                    }
+
+                }
+                return _pago;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al Traer Servicios {ex.StackTrace}");
+                return null;
+            }
+
+        }
+        #endregion
+        #region TIPOD DOCUMENTP
+        public List<DocumentoyPago> TipoDocuemto()
+        {
+            List<DocumentoyPago> _doc = new List<DocumentoyPago>();
+            try
+            {
+                
+                urlApi = api.UrlTipoDocumento();
+                var result = Get();
+                if (result.IsSuccessStatusCode)
+                {
+                    _doc = result.Content.ReadAsAsync<List<DocumentoyPago>>().Result;
+                   if (_doc.Equals(null))
+                    {
+                        _doc = null;
+                    }
+                }
+                return _doc;
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine($"Error al Traer Servicios {ex.StackTrace}");
+                _doc = null;
+                return null;
+            }
+
+        }
+        #endregion
+        #region NUMERO MAX PEDIDO
+        public NumPedido NumeroMax()
+        {
+            NumPedido _num = new NumPedido();
+            try
+            {
+
+                urlApi = api.UrlTipoDocumento();
+                var result = Get();
+                if (result.IsSuccessStatusCode)
+                {
+                    _num = result.Content.ReadAsAsync<NumPedido>().Result;
+
+                }
+                return _num;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al Traer Servicios {ex.StackTrace}");
+                _num = new NumPedido()
+                {
+                    NumeroPedido = 1
+                };
+                return _num;
+            }
+
+        }
+        #endregion
+
+
+
         #region METODOS URL
         private HttpResponseMessage Post() {
 
