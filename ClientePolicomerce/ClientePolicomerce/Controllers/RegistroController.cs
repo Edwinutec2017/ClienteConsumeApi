@@ -1,6 +1,8 @@
 ﻿using Dto.Dto.Login;
+using Dto.Dto.Productos;
 using Dto.Url;
 using System;
+using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace ClientePolicomerce.Controllers
@@ -75,5 +77,6 @@ namespace ClientePolicomerce.Controllers
             result = Json(obje);
             return result;
         }
+       
     }
 }

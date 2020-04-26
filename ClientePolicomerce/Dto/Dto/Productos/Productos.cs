@@ -32,4 +32,26 @@ namespace Dto.Dto.Productos
 
     }
     #endregion
+    #region DETALLE PEDIDO
+    public class DetallePedido {
+
+        public int CodigoArticulo { get; set; }
+        public int Cantidad { get; set; }
+        public double Precio { get; set; }
+        public double TotalArticulo { get; set; }
+    }
+    #endregion
+    #region Encabezado Pedido
+    public class EncabezadoPedido
+    {
+        public string CodigoPedido { get; set; }
+        public string FechaPedido { get; set; }
+        public int IdUser { get; set; }
+        public int IdTipoPago { get; set; }
+        public int IdTipoDoc { get; set; }
+        public double MontoTotal { get; set; }
+
+    }
+    #endregion
+
 }

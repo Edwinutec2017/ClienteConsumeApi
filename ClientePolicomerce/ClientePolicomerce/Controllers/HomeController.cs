@@ -1,4 +1,5 @@
 ﻿using Dto.Dto.Login;
+using Dto.Dto.Productos;
 using Dto.Url;
 using System;
 using System.Collections.Generic;
@@ -10,13 +11,15 @@ namespace ClientePolicomerce.Controllers
 {
     public class HomeController : Controller
     {
+        
         public ActionResult Index()
         {
             ActionResult result;
-        
+
 
             if (!(Session["User"] is LoginDto)) {
                 Session.Timeout = 90000;
+               
                 result = RedirectToAction("Index", "Login");
             }
             else
@@ -28,8 +31,8 @@ namespace ClientePolicomerce.Controllers
         {
             UrlMethodos urlMethodos = new UrlMethodos(null);
             ViewBag.Productos = urlMethodos.Productos();
-            ViewBag.tipoPago=urlMethodos.TipoPago();
-            ViewBag.tipoDocumento=urlMethodos.TipoDocuemto();
+            ViewBag.tipoPago = urlMethodos.TipoPago();
+            ViewBag.tipoDocumento = urlMethodos.TipoDocuemto();
             return View();
         }
 
@@ -40,5 +43,12 @@ namespace ClientePolicomerce.Controllers
 
             return View();
         }
+        [HttpPost]
+        public ActionResult Pedido(List<DetallePedido> array, EncabezadoPedido encabezado)
+        {
+            List<DetallePedido> detalle = (List<DetallePedido>)Session["detalle"];
+            return View();
+        }
+       
     }
 }

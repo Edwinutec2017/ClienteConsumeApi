@@ -1,5 +1,7 @@
-﻿@{
+﻿@using Dto.Dto.Login;
+@{
     ViewBag.Title = "Productos";
+    var usuario = Session["User"] as LoginDto;
 }
 <script src="~/Scripts/Tables/jquery-3.3.1.js"></script>
 <script src="~/Scripts/Tables/jquery.dataTables.min.js"></script>
@@ -8,7 +10,7 @@
 
 
 
-<div class="row rowest" id="row" >
+<div class="row rowest" id="row">
     <div class="ttctg">
         <img src="~/Content/Img/bannerProducto.jpg" class="BBPP" />
         <h3 class="txtes">CATALOGOS DE  PRODUCTOS</h3>
@@ -20,52 +22,57 @@
             <div class="conten">
                 <label>Tipo de Documento</label>
                 <span class="texobli">*</span>
-                <select class="form-control inputpedido" name="doc" required>
+                <select class="form-control inputpedido" name="doc" id="doc" required>
                     <option value="0">--------------</option>
-                    @foreach (var doc in ViewBag.tipoDocumento) {
-                    <option value='@doc.CODIGO'>@doc.NOMBRE</option>
+                    @foreach (var doc in ViewBag.tipoDocumento)
+                    {
+                        <option value='@doc.CODIGO'>@doc.NOMBRE</option>
                     }
-                  
+
 
                 </select>
                 <br />
                 <label>Fecha Pedido:</label>
-                <input type="text" name="pedidofecha" value="@DateTime.Now.ToString("dd-MM-yyyy")" class="form-control inputpedido" readonly disabled>
-
+                <input type="text" name="pedidofecha" id="pedidofecha" value="@DateTime.Now.ToString("dd-MM-yyyy")" class="form-control inputpedido" readonly disabled>
+                <br />
+                <button type="button" class="btn btn-danger btn-block inputpedido" style="padding-top:10PX" data-toggle="modal"  data-target="#EliminarPedido">
+                    <span class="glyphicon glyphicon-remove"></span> CANCELAR
+                </button>
             </div>
             <div class="conten">
                 <label>Tipo de Pago</label><span class="texobli">*</span>
-                <select class="form-control inputpedido" name="pago" required>
-                   <option>------------------</option>
-                   @foreach (var pago in ViewBag.tipoPago)
+                <select class="form-control inputpedido" name="pago" id="pago" required>
+                    <option>------------------</option>
+                    @foreach (var pago in ViewBag.tipoPago)
                     {
-                     <option value='@pago.CODIGO'>@pago.NOMBRE</option>
+                        <option value='@pago.CODIGO'>@pago.NOMBRE</option>
                     }
 
-                   </select>
+                </select>
                 <br />
                 <label>Nombre Cliente</label>
+                <label id="codclien" hidden>@usuario.Codigo</label>
+                <input type="text" name="cliente" value="@usuario.Nombre" class="form-control inputpedido" readonly disabled />
+                <br />
+                <button type="button" class="btn btn-primary btn-block inputpedido" onclick="RegistrarPedido()" style="padding-top:10PX">
+                    <span class="glyphicon glyphicon-ok"></span> Guardar
+                </button>
 
-                <input type="text" name="pedidofecha" value="@DateTime.Now.ToString("dd-MM-yyyy")" class="form-control inputpedido" readonly disabled>
+                <br>
             </div>
             <div class="conten">
                 <label>Total Pedido $ :</label>
-
                 <input type="text" name="totalglobal" id="totalglobal" value="0" class="form-control inputpedido" readonly disabled>
-            </div>
-            <div class="conten">
-                <button type="button" class="btn btn-danger btn-block inputpedido" style="padding-top:10PX" data-toggle="modal" data-target="#EliminarPedido">
-                    <span class="glyphicon glyphicon-remove"></span> CANCELAR
-                </button>
-               <br>
-                <button type="button" class="btn btn-primary btn-block inputpedido" style="padding-top:10PX">
-                    <span class="glyphicon glyphicon-ok"></span> Guardar
-                </button>
+                <label>Cantidad de Producto:</label>
+                <input type="text" name="productocant" id="productocant" value="0" class="form-control inputpedido" readonly disabled>
+                <label id="mensaje" style="color:red"></label>
+                <label id="mensaje2" style="color:red"></label>
             </div>
 
         </div>
         <br />
     </div>
+
     <br />
     <div>
         <table id="productotb" border="0" class="display">
@@ -176,7 +183,7 @@
                         </table>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-success" data-dismiss="modal" onclick="totalfina()">Confirmar</button>
+                        <button type="button" class="btn btn-success" data-dismiss="modal" onclick="totalfinal()">Agregar</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
                     </div>
@@ -188,7 +195,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title" id="exampleModalLabel">Eliminacion pedido.</h4>
-                       
+
                     </div>
                     <div class="modal-body">
                         <h1>
@@ -196,7 +203,7 @@
                         </h1>
                         <h1 style="text-align:center">
 
-                            <img src="~/Content/Img/adventencia.jpg"  class="imgalerta"/>
+                            <img src="~/Content/Img/adventencia.jpg" class="imgalerta" />
                         </h1>
 
                         <h3 style="text-align:center"> Eliminacion de pedido..</h3>
