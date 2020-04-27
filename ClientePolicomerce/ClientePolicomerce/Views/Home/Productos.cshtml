@@ -40,7 +40,7 @@
 
                 </select>
                 <br />
-                <button type="button" class="btn btn-primary btn-block inputpedido" onclick="RegistrarPedido()" style="padding-top:10PX">
+                <button type="button" class="btn btn-primary btn-block inputpedido" onclick="Validar()" data-toggle="modal" data-target="#confirmacion" style="padding-top:10PX">
                     <span class="glyphicon glyphicon-ok"></span> Guardar
                 </button>
 
@@ -197,30 +197,47 @@
         </div>
 
         <!--alerta-->
-        <div class="modal fade modalalert" id="EliminarPedido" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+        <div class="modal" tabindex="-1" role="dialog" id="EliminarPedido">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title" id="exampleModalLabel">Eliminacion pedido.</h4>
 
+                        
+                        <p style="font-size:15px"><img src="~/Content/Img/logo.jpg" style="width:100px;height:50px" /> Alerta</p>
                     </div>
-                    <div class="modal-body">
-                       
-                        <h1 style="text-align:center">
+                    <div class="modal-body" style="text-align:center">
 
-                            <img src="~/Content/Img/adventencia.jpg" class="imgalerta" />
-                        </h1>
-
-                        <h3 style="text-align:center"> Eliminacion de pedido..</h3>
+                            <p style="font-size:20px"><h4>Eliminacion de pedido..</h4></p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" onclick="LimpiarTotal()" data-dismiss="modal">Confirmar</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
                     </div>
                 </div>
             </div>
         </div>
+
+        <!--modal  0 producto-->
+        <div class="modal" tabindex="-1" role="dialog" id="confirmacion">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <p style="font-size:15px"><img src="~/Content/Img/logo.jpg" style="width:100px;height:50px" /> Alerta</p>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            <label style="font-size:20px" id="txtalerta"></label>
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-dismiss="modal" onclick="RegistrarPedido()">Confirmar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
     </div>
 

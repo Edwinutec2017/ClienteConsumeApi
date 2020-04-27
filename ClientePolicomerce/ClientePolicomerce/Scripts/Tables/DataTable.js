@@ -58,6 +58,8 @@ function LimpiarTotal() {
     $('#productocant').val("0");
     $('#mensaje').html("");
     $('#mensaje2').html("");
+    $('#txtalerta').html("");
+    array = new Array();
 }
 function totalfinal() {
    
@@ -73,8 +75,10 @@ function totalfinal() {
 function ProductoAdquiridos(total,cantidad) {
     
     var reques = {
+        
          "CodigoArticulo": codigo,
-         "Cantidad": cantidad,
+        "Cantidad": cantidad,
+         "IdEncabezado": 0,
          "Precio": precio,
          "TotalArticulo": total
     };
@@ -101,21 +105,31 @@ function Pedido() {
 
     });
 }
+
+function Validar() {
+    if (parseInt($('#pago').val()) == 0 || parseInt($('#doc').val()) == 0) {
+        $('#txtalerta').html("Eliga un tipo de pago y el documento. ");
+
+
+    } else if (parseFloat($('#totalglobal').val()) == 0) {
+
+        $('#txtalerta').html("No tiene Ingresado Producto.");
+    }
+    else {
+        $('#txtalerta').html("Confirmar el pedido para guardarlo..");
+    }
+}
 var encabezado;
 function RegistrarPedido() {
     console.log(array)
 
     if (parseInt($('#pago').val()) == 0 || parseInt($('#doc').val()) == 0) {
-        $('#mensaje').html("Ojo:  Elija un Tipo de Pago ");
-        $('#mensaje2').html("y un tipo de Documento ");
+      
 
     } else if (parseFloat($('#totalglobal').val()) == 0) {
 
-        $('#mensaje').html("No a Ingresado ningun Producto ");
     } else {
         encabezado = {
-            "CodigoPedido": "",
-            "FechaPedido": $('#pedidofecha').val(),
             "IdUser": parseInt($('#codclien').html()),
             "IdTipoPago": parseInt($('#pago').val()),
             "IdTipoDoc": parseInt($('#doc').val()),
