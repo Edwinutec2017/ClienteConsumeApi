@@ -67,6 +67,24 @@ namespace Dto.Url
             return $"{host}ords/policomerce/policomerce/numpedid";
         }
         #endregion
+
+        #region UrlEncabezado
+        public string UrlEncabezadoPedido() {
+            return $"{host}ords/policomerce/policomerce/encabezadopedido/";
+        }
+        #endregion
+        #region Busca Id Pedido
+        public string UrlIdPedido(string codigo) {
+            return $"{host}ords/policomerce/policomerce/encabezadopedido/?cod={codigo}";
+        }
+        #endregion
+        #region UrlPedidoDetalle
+        public string UrlDetallePedido()
+        {
+            return $"{host}ords/policomerce/policomerce/pedidodetalle/";
+        }
+        #endregion
+
     }
 }
 

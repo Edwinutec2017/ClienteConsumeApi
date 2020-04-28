@@ -51,8 +51,20 @@ namespace Dto.Dto.Productos
 
     }
     #endregion
+    #region codigo de pedido
     public class Codigo {
         public string CODIGOPEDIDO { get; set; }
     }
+    #endregion
+    #region Id Pedido
+    public class IdPedido {
+        public int CODIGOPEDIDO { get; set; }
+    }
+    #endregion
+    #region Respuesta Detalle
+    public class Respuesta {
+        public string Status { get; set; }
+    }
+    #endregion
 
 }

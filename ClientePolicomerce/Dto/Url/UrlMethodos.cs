@@ -278,8 +278,82 @@ namespace Dto.Url
         }
         #endregion
 
+        #region ENCABEZADO PEDIDO
+        public Codigo RegistroEncabezadoPedido()
+        {
+            urlApi = api.UrlEncabezadoPedido();
+            Codigo cod = new Codigo();
+            try
+            {
+                var result1 = Post();
+                if (result1.IsSuccessStatusCode)
+                {
 
+                     cod = result1.Content.ReadAsAsync<Codigo>().Result;
 
+                }
+                return cod;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al crear encabezado pedido.. {ex.StackTrace} ");
+             
+                return null;
+            }
+
+        }
+        #endregion
+        #region Id Pedido
+        public List<IdPedido> IdPedido(string cod)
+        {
+            
+            urlApi = api.UrlIdPedido(cod);
+            List<IdPedido> id = new List<IdPedido>();
+            try
+            {
+                var result1 = Get();
+                if (result1.IsSuccessStatusCode)
+                {
+
+                  id = result1.Content.ReadAsAsync<List<IdPedido>>().Result;
+
+                }
+                return id;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al traer el id. {ex.StackTrace} ");
+               
+                return null;
+            }
+
+        }
+        #endregion
+        #region DETALLE PEDIDO 
+        public Respuesta DetallePedido()
+        {
+            urlApi = api.UrlDetallePedido();
+            Respuesta cod = new Respuesta();
+            try
+            {
+                var result1 = Post();
+                if (result1.IsSuccessStatusCode)
+                {
+
+                    cod = result1.Content.ReadAsAsync<Respuesta>().Result;
+
+                }
+                return cod;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al crear encabezado pedido.. {ex.StackTrace} ");
+
+                return null;
+            }
+
+        }
+        #endregion
         #region METODOS URL
         private HttpResponseMessage Post() {
 
