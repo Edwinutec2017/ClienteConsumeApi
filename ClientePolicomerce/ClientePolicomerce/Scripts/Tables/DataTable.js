@@ -95,15 +95,18 @@ function Pedido() {
         data: { array,encabezado },
         dataType: 'json',
         success: function (resp) {
-            if (resp == 200) {
-                $('#respuesta').html("");
+            if (resp == "400") {
+                Resp("No se Pudo Ingresar el pedido");
               
-            } else if (resp == 400) {
-                
+            } else {
+                Resp("EXITO SU CODIGO DE PEDIDO ES : " + resp);
             }
         }
 
     });
+}
+function Resp(resp) {
+    $('#respuesta').html(resp);
 }
 
 function Validar() {
@@ -160,3 +163,14 @@ $(document).ready(function () {
 
 });
 
+$(document).ready(function () {
+    $('#detallePedido').DataTable();
+    $(document).on('click', '.pedidoEncabezado', function () {
+
+        var table = $('#detallePedido').DataTable();
+        var data = table.row($(this).closest('tr')).data();
+
+      
+    });
+
+});

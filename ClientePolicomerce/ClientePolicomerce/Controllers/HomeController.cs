@@ -45,13 +45,21 @@ namespace ClientePolicomerce.Controllers
             ViewBag.tipoDocumento = urlMethodos.TipoDocuemto();
             return View();
         }
+        public ActionResult PedidosSolic() {
+            UrlMethodos urlMethodos = new UrlMethodos(null);
+            var usuario = Session["User"] as LoginDto;
+            ViewBag.Encabezado = urlMethodos.PedidoEncabezados(usuario.Codigo);
+            return View();
+        }
+
+
         [HttpPost]
         public ActionResult Pedido(List<DetallePedido> array, EncabezadoPedido encabezado)
         {
             ActionResult resul;
             DetallePedido deta;
             var status = "";
-            if (array.Count < 10 || encabezado != null)
+            if (array.Count <= 10 || encabezado != null)
             {
                 List<IdPedido> id;
                 UrlMethodos urlMethodos = new UrlMethodos(encabezado);
@@ -83,25 +91,16 @@ namespace ClientePolicomerce.Controllers
                                 status =cod.CODIGOPEDIDO ;
                             else
                                 status = "400";
-
                         }
                     }
                     else
                         status = "400";
-
                 }
                 else
-                {
                     status = "400";
-
-                }
-
-
-
             }
             else
                 status = "400";
-
 
             resul = Json(status);
 

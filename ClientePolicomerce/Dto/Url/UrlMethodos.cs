@@ -277,7 +277,6 @@ namespace Dto.Url
 
         }
         #endregion
-
         #region ENCABEZADO PEDIDO
         public Codigo RegistroEncabezadoPedido()
         {
@@ -354,6 +353,30 @@ namespace Dto.Url
 
         }
         #endregion
+        #region MOSTRAR ENCABEZADO PEDIDO
+        public List<ClPepdidoEnca> PedidoEncabezados(int id)
+        {
+            try
+            {
+                List<ClPepdidoEnca> _pedido = new List<ClPepdidoEnca>();
+                urlApi = api.UrlPedidoEncabezado(id);
+                var result = Get();
+                if (result.IsSuccessStatusCode)
+                {
+                    _pedido = result.Content.ReadAsAsync<List<ClPepdidoEnca>>().Result;
+                }
+                return _pedido;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al Traer Servicios {ex.StackTrace}");
+                return null;
+            }
+
+        }
+        #endregion
+
+
         #region METODOS URL
         private HttpResponseMessage Post() {
 

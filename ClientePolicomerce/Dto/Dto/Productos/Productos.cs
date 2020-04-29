@@ -67,4 +67,24 @@ namespace Dto.Dto.Productos
     }
     #endregion
 
+    #region EXTRAER PEDIDO
+    public class IdPedidoClinte {
+        public int Id { get; set; }
+    }
+    #endregion
+
+    #region Encabezado Mostrar Cliente
+    public class ClPepdidoEnca {
+
+        public string Codigo { get; set; }
+        public string Documento { get; set; }
+        public string Estado { get; set; }
+        public int Id { get; set; }
+        public string Pedido { get; set; }
+        public string Pago { get; set; }
+        public double Total { get; set; }
+
+    }
+    #endregion
+
 }

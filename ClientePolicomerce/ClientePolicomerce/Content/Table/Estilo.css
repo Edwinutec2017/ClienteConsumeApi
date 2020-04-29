@@ -103,3 +103,13 @@ width:170px;
 
 }
 
+.contetable {
+    text-align: left;
+    background-color: black;
+    color: white
+}
+.detatable {
+    text-align: center;
+    font-size: 15px;
+    color:black
+}

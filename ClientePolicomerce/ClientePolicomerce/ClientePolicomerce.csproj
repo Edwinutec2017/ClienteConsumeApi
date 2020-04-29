@@ -234,6 +234,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="packages.config" />
     <Content Include="Views\Login\Error.cshtml" />
+    <Content Include="Views\Home\PedidosSolic.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dto\Dto.csproj">
