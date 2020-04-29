@@ -375,8 +375,6 @@ namespace Dto.Url
 
         }
         #endregion
-
-
         #region Cancelar Pedido
         public Respuesta CancelarPedido(int id)
         {
@@ -395,7 +393,7 @@ namespace Dto.Url
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error al crear encabezado pedido.. {ex.StackTrace} ");
+                Console.WriteLine($"Error al cancelar pedido.. {ex.StackTrace} ");
 
                 return null;
             }
@@ -403,24 +401,53 @@ namespace Dto.Url
         }
 
         #endregion
+        #region MOSTRAR DETALLE PEDIDO
+        public List<ClPedidoDetalle> MostrarDetalle(int id)
+        {
+            urlApi = api.UrlPedidoDetalle(id);
+            List<ClPedidoDetalle> cod = new List<ClPedidoDetalle>();
+            try
+            {
+                var result1 = Get();
+                if (result1.IsSuccessStatusCode)
+                {
 
+                    cod = result1.Content.ReadAsAsync<List<ClPedidoDetalle>>().Result;
 
+                }
+                return cod;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error mostrar detalle.. {ex.StackTrace} ");
+
+                return null;
+            }
+
+        }
+
+        #endregion
         #region METODOS URL
+        #region POST
         private HttpResponseMessage Post() {
 
             return client.PostAsJsonAsync(urlApi, obj).Result;
         }
-
+        #endregion
+        #region GET
         private HttpResponseMessage Get()
         {
             return client.GetAsync(urlApi).Result;
 
         }
+        #endregion
+        #region DELETE
         private HttpResponseMessage Delete()
         {
             return client.DeleteAsync(urlApi).Result;
 
         }
+        #endregion
         #endregion
 
     }

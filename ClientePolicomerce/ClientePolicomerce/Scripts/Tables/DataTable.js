@@ -99,7 +99,7 @@ function Pedido() {
                 Resp("No se Pudo Ingresar el pedido");
               
             } else {
-                Resp("EXITO SU CODIGO DE PEDIDO ES : " + resp);
+                Resp("Numero de Pedido es: " + resp);
             }
         }
 
@@ -178,6 +178,25 @@ $(document).ready(function () {
       
     });
 
+    $(document).on('click', '.pedidoDetalle', function () {
+
+        var table = $('#detallePedido').DataTable();
+        var data = table.row($(this).closest('tr')).data();
+
+        var id = data[7];
+
+
+
+        
+        reque = {
+            "Id": id
+        };
+        MostrarDetalle();
+      
+
+    });
+
+
 });
 
 function CancelarPedido() {
@@ -202,4 +221,43 @@ $(document).ready(function () {
         // Recargo la página
         location.reload();
     });
+});
+
+function MostrarDetalle() {
+
+    $.ajax({
+        type: 'POST',
+        url: '/Home/PedidosDetalle',
+        data: reque,
+        dataType: 'json',
+        success: function (resp) {
+            var tr = '';
+            $('#cuerpo').html('');
+            if (resp != null) {
+                for (var i = 0; i < 5; i++) {
+                     tr = '<tr>';
+                    var im = '<td class="detatable"><img id="imgser" style="padding-top:5px" src="data:image/png;base64,' + resp[i]["Imagen"] + '" width="70" height="70" /></td>';
+                    var na = '<td class="detatable">' + resp[i]["Nombre"] + '</td>';
+                    var ca = '<td class="detatable">' + resp[i]["Cantidad"] + '</td>';
+                    var pr = '<td class="detatable">' + resp[i]["Precio"] + '</td>';
+                    var tt = '<td class="detatable">' + resp[i]["Total"] + '</td></tr>';
+
+                    tr = tr+im + na + ca + pr + tt; 
+                    $('#cuerpo').append(tr);
+                    
+                }
+               
+            } 
+        }
+
+    });
+
+}
+$(document).ready(function () {
+    $('#Detalle').DataTable();
+    $(document).on('click', '.det', function () {
+
+  
+    });
+
 });

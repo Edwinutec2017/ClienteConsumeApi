@@ -67,7 +67,6 @@ namespace Dto.Url
             return $"{host}ords/policomerce/policomerce/numpedid";
         }
         #endregion
-
         #region UrlEncabezado
         public string UrlEncabezadoPedido() {
             return $"{host}ords/policomerce/policomerce/encabezadopedido/";
@@ -90,12 +89,18 @@ namespace Dto.Url
 
         }
         #endregion
-
         #region ELIMINCION PEDIDO
         public string UrlPedidoCancelado(int id) {
             return $"{host}ords/policomerce/policomerce/pedidos/?Id={id}";
         }
         #endregion
+        #region Mostrar Detalle Pedido
+        public string UrlPedidoDetalle(int id) {
+            return $"{host}ords/policomerce/policomerce/pedidodetalle/?Id={id}";
+
+        }
+        #endregion
+
     }
 }
 

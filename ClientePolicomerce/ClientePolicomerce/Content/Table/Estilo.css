@@ -104,12 +104,13 @@ width:170px;
 }
 
 .contetable {
-    text-align: left;
+    text-align: center;
     background-color: black;
-    color: white
+    color: white;
+    font-size:14px;
 }
 .detatable {
     text-align: center;
-    font-size: 15px;
+    font-size: 16px;
     color:black
 }
