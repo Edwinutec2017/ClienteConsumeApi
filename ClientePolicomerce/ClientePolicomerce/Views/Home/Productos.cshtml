@@ -15,15 +15,17 @@
         <img src="~/Content/Img/bannerProducto.jpg" class="BBPP" />
         <h3 class="txtes">CATALOGOS DE  PRODUCTOS</h3>
         <h5 class="txtes">FORMULARIO PARA PEDIDOS</h5>
+        <H3 id="respuesta"></H3>
     </div>
     <div class="divpedido">
+        
         <label style="padding-left:15px">Los campos con <span class="texobli">*</span> son obligatorios</label>
         <div class="formpedido">
             <div class="conten">
                 <label>Fecha Pedido:</label>
                 <input type="text" name="pedidofecha" id="pedidofecha" value="@DateTime.Now.ToString("dd-MM-yyyy")" class="form-control inputpedido" readonly disabled>
                 <br />
-         
+               
                 <button type="button" class="btn btn-danger btn-block inputpedido" style="padding-top:10PX" data-toggle="modal" data-target="#EliminarPedido">
                     <span class="glyphicon glyphicon-remove"></span> CANCELAR
                 </button>
@@ -57,21 +59,19 @@
 
                 </select>
                 <br />
-            </div>
-            <div class="conten">
                 <label>Nombre Cliente</label>
                 <label id="codclien" hidden>@usuario.Codigo</label>
                 <input type="text" name="cliente" value="@usuario.Nombre" class="form-control inputpedido" readonly disabled />
                 <br />
 
             </div>
+        
             <div class="conten">
                 <label>Total Pedido $ :</label>
                 <input type="text" name="totalglobal" id="totalglobal" value="0" class="form-control inputpedido" readonly disabled>
                 <label>Cantidad de Producto:</label>
                 <input type="text" name="productocant" id="productocant" value="0" class="form-control inputpedido" readonly disabled>
-                <label id="mensaje" style="color:red"></label>
-                <label id="mensaje2" style="color:red"></label>
+             
             </div>
 
         </div>

@@ -96,7 +96,7 @@ function Pedido() {
         dataType: 'json',
         success: function (resp) {
             if (resp == 200) {
-                
+                $('#respuesta').html("");
               
             } else if (resp == 400) {
                 

@@ -12,12 +12,14 @@
 
 <div class="row rowest" id="row">
     <div class="ttctg">
-       
+
         <img src="~/Content/Img/bannerservicios.jpg" class="BBPP" />
         <h3 class="txtes">CATALOGOS DE SERVICIOS</h3>
         <h5 class="txtes">FORMULARIO PARA PEDIDOS</h5>
+        <H3>Respuesta</H3>
     </div>
     <div class="divpedido">
+
         <label style="padding-left:15px">Los campos con <span class="texobli">*</span> son obligatorios</label>
         <div class="formpedido">
             <div class="conten">
@@ -58,26 +60,24 @@
 
                 </select>
                 <br />
-            </div>
-            <div class="conten">
                 <label>Nombre Cliente</label>
                 <label id="codclien" hidden>@usuario.Codigo</label>
                 <input type="text" name="cliente" value="@usuario.Nombre" class="form-control inputpedido" readonly disabled />
                 <br />
 
             </div>
+
             <div class="conten">
                 <label>Total Pedido $ :</label>
                 <input type="text" name="totalglobal" id="totalglobal" value="0" class="form-control inputpedido" readonly disabled>
                 <label>Cantidad de Producto:</label>
                 <input type="text" name="productocant" id="productocant" value="0" class="form-control inputpedido" readonly disabled>
-        
+
             </div>
 
         </div>
         <br />
     </div>
-
     <br />
     <div>
         <table id="productotb" border="0" class="display">

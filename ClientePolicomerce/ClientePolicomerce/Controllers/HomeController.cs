@@ -11,15 +11,16 @@ namespace ClientePolicomerce.Controllers
 {
     public class HomeController : Controller
     {
-        
+
         public ActionResult Index()
         {
             ActionResult result;
 
 
-            if (!(Session["User"] is LoginDto)) {
+            if (!(Session["User"] is LoginDto))
+            {
                 Session.Timeout = 90000;
-               
+
                 result = RedirectToAction("Index", "Login");
             }
             else
@@ -49,50 +50,63 @@ namespace ClientePolicomerce.Controllers
         {
             ActionResult resul;
             DetallePedido deta;
-            var status=0;
+            var status = "";
             if (array.Count < 10 || encabezado != null)
             {
                 List<IdPedido> id;
                 UrlMethodos urlMethodos = new UrlMethodos(encabezado);
                 Codigo cod = urlMethodos.RegistroEncabezadoPedido();
-                if (!string.IsNullOrEmpty(cod.CODIGOPEDIDO)) {
-                    id= urlMethodos.IdPedido(cod.CODIGOPEDIDO);
-                    if (id.Count >0)
+                if (!string.IsNullOrEmpty(cod.CODIGOPEDIDO))
+                {
+                    id = urlMethodos.IdPedido(cod.CODIGOPEDIDO);
+                    if (id.Count > 0)
                     {
-                        var idpedido=0;
-                        foreach (var idp in id) {
+                        var idpedido = 0;
+                        foreach (var idp in id)
+                        {
                             idpedido = idp.CODIGOPEDIDO;
                         };
 
-                        foreach (var det in array) {
-                            deta = new DetallePedido() {
-                                CodigoArticulo=det.CodigoArticulo,
-                                 Cantidad=det.Cantidad,
-                                 IdEncabezado=idpedido,
-                                 Precio=det.Precio,
-                                 TotalArticulo= det.TotalArticulo
+                        foreach (var det in array)
+                        {
+                            deta = new DetallePedido()
+                            {
+                                CodigoArticulo = det.CodigoArticulo,
+                                Cantidad = det.Cantidad,
+                                IdEncabezado = idpedido,
+                                Precio = det.Precio,
+                                TotalArticulo = det.TotalArticulo
                             };
                             urlMethodos = new UrlMethodos(deta);
                             Respuesta resp = urlMethodos.DetallePedido();
                             if (resp.Status.Equals("200"))
-                                status = 200;
+                                status =cod.CODIGOPEDIDO ;
                             else
-                                status = 400;
+                                status = "400";
 
                         }
                     }
+                    else
+                        status = "400";
+
+                }
+                else
+                {
+                    status = "400";
 
                 }
 
-            }
-            else {
-               status = 400;
-                resul = Json(status);
-            }
 
 
-            return View();
+            }
+            else
+                status = "400";
+
+
+            resul = Json(status);
+
+            return resul;
+
         }
-       
     }
 }
