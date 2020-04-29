@@ -234,9 +234,9 @@ function MostrarDetalle() {
             var tr = '';
             $('#cuerpo').html('');
             if (resp != null) {
-                for (var i = 0; i < 5; i++) {
+                for (var i = 0; i < 10; i++) {
                      tr = '<tr>';
-                    var im = '<td class="detatable"><img id="imgser" style="padding-top:5px" src="data:image/png;base64,' + resp[i]["Imagen"] + '" width="70" height="70" /></td>';
+                  var im = '<td class="detatable"><img id="imgser" style="padding-top:px" src="data:image/png;base64,' + resp[i]["Imagen"] + '" width="70" height="70" /></td>';
                     var na = '<td class="detatable">' + resp[i]["Nombre"] + '</td>';
                     var ca = '<td class="detatable">' + resp[i]["Cantidad"] + '</td>';
                     var pr = '<td class="detatable">' + resp[i]["Precio"] + '</td>';
@@ -256,7 +256,8 @@ function MostrarDetalle() {
 $(document).ready(function () {
     $('#Detalle').DataTable();
     $(document).on('click', '.det', function () {
-
+        var table = $('#Detalle').DataTable();
+        var data = table.row($(this).closest('tr')).data();
   
     });
 
