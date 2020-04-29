@@ -30,6 +30,7 @@
                     <th class="contetable">PAGO</th>
                     <th class="contetable">TOTAL PEDIDO</th>
                     <th class="contetable">ACCIONES</th>
+                    <th class="contetable" hidden>ID</th>
                 </tr>
             </thead>
             <tbody>
@@ -45,6 +46,7 @@
                         {
                             case "En Progreso":
                                 <span class="label label-primary">En Progreso</span>
+                                option = 0;
                                 break;
                             case "Pendiente":
                                 <span class="label label-success">Pendiente</span>
@@ -66,25 +68,26 @@
                     <td class="detatable">
                         @if (option == 1)
                         {
-                            <button type="button" value="@produc.Id" class="btn btn-danger" disabled>
+                            <button type="button" id="btn1" value="@produc.Id" class="btn btn-danger" disabled>
                                 <span class="glyphicon glyphicon-remove"></span>
                             </button>
-                            <button type="button" value="@produc.Id" class="btn btn-success">
+                            <button type="button" id="btn1" value="@produc.Id" class="btn btn-success">
                                 <span class="glyphicon glyphicon glyphicon-list-alt"></span>
                             </button>
                         }
                         else
                         {
-                            <button type="button" value="@produc.Id" class="btn btn-danger" 
-                               data-toggle="modal" data-target="#EliminarPedido">
+                            <button type="reset" id="btn1" value="@produc.Id" class="btn btn-danger pedidoEncabezado"
+                                    data-toggle="modal" data-target="#EliminarPedido">
                                 <span class="glyphicon glyphicon-remove"></span>
                             </button>
-                            <button type="button" value="@produc.Id" class="btn btn-success">
+                            <button type="reset" id="btn1" value="@produc.Id" class="btn btn-success">
                                 <span class="glyphicon glyphicon glyphicon-list-alt"></span>
                             </button>
                         }
                     </td>
-                  
+                    <td class="detatable">@produc.Id</td>
+
                 </tr>
                 }
             </tbody>
@@ -173,12 +176,12 @@
                         <p style="font-size:15px"><img src="~/Content/Img/logo.jpg" style="width:100px;height:50px" /> Alerta</p>
                     </div>
                     <div class="modal-body" style="text-align:center">
-
-                        <p style="font-size:20px"><h4></h4></p>
+                        <label id="id" hidden></label>
+                        <p style="font-size:20px" hidden><h4 id="mensaje"></h4></p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" onclick="LimpiarTotal()" data-dismiss="modal">Confirmar</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-danger" id="confirmar" onclick="CancelarPedido()" data-dismiss="modal">Confirmar</button>
+                        <button type="reset" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>

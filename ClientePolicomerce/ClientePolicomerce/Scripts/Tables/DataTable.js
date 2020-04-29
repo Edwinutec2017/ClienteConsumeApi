@@ -162,7 +162,7 @@ $(document).ready(function () {
     });
 
 });
-
+var reque;
 $(document).ready(function () {
     $('#detallePedido').DataTable();
     $(document).on('click', '.pedidoEncabezado', function () {
@@ -170,7 +170,36 @@ $(document).ready(function () {
         var table = $('#detallePedido').DataTable();
         var data = table.row($(this).closest('tr')).data();
 
+        var id = data[7];
+        reque = {
+            "Id":id
+        }
+        $('#mensaje').html("Codigo de pedido a Cancelar : " + data[0]);
       
     });
 
+});
+
+function CancelarPedido() {
+    $.ajax({
+        type: 'POST',
+        url: '/Home/PedidoCancelar',
+        data: reque,
+        dataType: 'json',
+        success: function (resp) {
+            if (resp == "200") {
+              
+                
+            } else {
+               
+            }
+        }
+
+    });
+}
+$(document).ready(function () {
+    $('#confirmar').click(function () {
+        // Recargo la página
+        location.reload();
+    });
 });

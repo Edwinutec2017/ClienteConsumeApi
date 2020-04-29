@@ -90,6 +90,12 @@ namespace Dto.Url
 
         }
         #endregion
+
+        #region ELIMINCION PEDIDO
+        public string UrlPedidoCancelado(int id) {
+            return $"{host}ords/policomerce/policomerce/pedidos/?Id={id}";
+        }
+        #endregion
     }
 }
 

@@ -34,7 +34,7 @@
                 <label>Tipo de Documento</label>
                 <span class="texobli">*</span>
                 <select class="form-control inputpedido" name="doc" id="doc" required>
-                    <option value="0">--------------</option>
+                    <option value="0">- seleccionar -</option>
                     @foreach (var doc in ViewBag.tipoDocumento)
                     {
                         <option value='@doc.CODIGO'>@doc.NOMBRE</option>
@@ -51,14 +51,14 @@
             <div class="conten">
                 <label>Tipo de Pago</label><span class="texobli">*</span>
                 <select class="form-control inputpedido" name="pago" id="pago" required>
-                    <option>------------------</option>
+                    <option>- seleccionar -</option>
                     @foreach (var pago in ViewBag.tipoPago)
                     {
                         <option value='@pago.CODIGO'>@pago.NOMBRE</option>
                     }
 
                 </select>
-                <br />
+            
                 <label>Nombre Cliente</label>
                 <label id="codclien" hidden>@usuario.Codigo</label>
                 <input type="text" name="cliente" value="@usuario.Nombre" class="form-control inputpedido" readonly disabled />

@@ -51,7 +51,16 @@ namespace ClientePolicomerce.Controllers
             ViewBag.Encabezado = urlMethodos.PedidoEncabezados(usuario.Codigo);
             return View();
         }
-
+        [HttpPost]
+        public ActionResult PedidoCancelar(IdPedidoClinte pedi)
+        {
+            ActionResult result;
+            UrlMethodos urlMethodos = new UrlMethodos(null);
+            Respuesta resp = urlMethodos.CancelarPedido(pedi.Id);
+            result = Json(resp.Status);
+         
+            return result;
+        }
 
         [HttpPost]
         public ActionResult Pedido(List<DetallePedido> array, EncabezadoPedido encabezado)

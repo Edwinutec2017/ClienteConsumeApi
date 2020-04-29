@@ -377,6 +377,34 @@ namespace Dto.Url
         #endregion
 
 
+        #region Cancelar Pedido
+        public Respuesta CancelarPedido(int id)
+        {
+            urlApi = api.UrlPedidoCancelado(id);
+            Respuesta cod = new Respuesta();
+            try
+            {
+                var result1 = Delete();
+                if (result1.IsSuccessStatusCode)
+                {
+
+                    cod = result1.Content.ReadAsAsync<Respuesta>().Result;
+
+                }
+                return cod;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al crear encabezado pedido.. {ex.StackTrace} ");
+
+                return null;
+            }
+
+        }
+
+        #endregion
+
+
         #region METODOS URL
         private HttpResponseMessage Post() {
 
@@ -386,6 +414,11 @@ namespace Dto.Url
         private HttpResponseMessage Get()
         {
             return client.GetAsync(urlApi).Result;
+
+        }
+        private HttpResponseMessage Delete()
+        {
+            return client.DeleteAsync(urlApi).Result;
 
         }
         #endregion
