@@ -61,7 +61,6 @@
     <Compile Include="Dto\Departamento\DepyMuni.cs" />
     <Compile Include="Dto\Login\LoginUser.cs" />
     <Compile Include="Dto\Login\Registro.cs" />
-    <Compile Include="Dto\Productos\Class1.cs" />
     <Compile Include="Dto\Productos\Productos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Url\UrlApi.cs" />
