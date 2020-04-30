@@ -205,3 +205,8 @@ C:\repositorios\ClienteConsumeApi\ClientePolicomerce\ClientePolicomerce\obj\Debu
 C:\repositorios\ClienteConsumeApi\ClientePolicomerce\ClientePolicomerce\obj\Debug\ClientePolicomerce.csproj.CopyComplete
 C:\repositorios\ClienteConsumeApi\ClientePolicomerce\ClientePolicomerce\obj\Debug\ClientePolicomerce.dll
 C:\repositorios\ClienteConsumeApi\ClientePolicomerce\ClientePolicomerce\obj\Debug\ClientePolicomerce.pdb
+F:\repositorios\ClienteConsumeApi\ClientePolicomerce\ClientePolicomerce\bin\System.Net.Http.Extensions.dll
+F:\repositorios\ClienteConsumeApi\ClientePolicomerce\ClientePolicomerce\bin\System.Net.Http.Primitives.dll
+F:\repositorios\ClienteConsumeApi\ClientePolicomerce\ClientePolicomerce\bin\System.Net.Http.Formatting.dll
+F:\repositorios\ClienteConsumeApi\ClientePolicomerce\ClientePolicomerce\bin\Dto.dll.config
+F:\repositorios\ClienteConsumeApi\ClientePolicomerce\ClientePolicomerce\bin\System.Net.Http.Formatting.xml

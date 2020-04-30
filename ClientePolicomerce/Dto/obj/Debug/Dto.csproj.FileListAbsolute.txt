@@ -15,3 +15,10 @@ C:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\obj\Debug\Dto.csproj.Co
 C:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\obj\Debug\Dto.csproj.CopyComplete
 C:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\obj\Debug\Dto.dll
 C:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\obj\Debug\Dto.pdb
+F:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\bin\Debug\Dto.dll.config
+F:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\bin\Debug\Newtonsoft.Json.dll
+F:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\bin\Debug\System.Net.Http.Formatting.dll
+F:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\bin\Debug\Newtonsoft.Json.xml
+F:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\bin\Debug\System.Net.Http.Formatting.xml
+F:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\obj\Debug\Dto.csprojAssemblyReference.cache
+F:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\obj\Debug\Dto.csproj.CopyComplete
