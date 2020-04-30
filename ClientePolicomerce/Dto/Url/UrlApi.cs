@@ -9,8 +9,8 @@ namespace Dto.Url
     public class UrlApi
     {
         #region HOST
-       // private readonly string host = "http://localhost:8080/";
-        private readonly string host = "http://192.168.56.5:8080/";
+        private readonly string host = "http://localhost:8080/";
+       // private readonly string host = "http://192.168.56.5:8080/";
         #endregion
 
         #region UrlLogin
