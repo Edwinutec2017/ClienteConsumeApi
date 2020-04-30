@@ -8,11 +8,7 @@ namespace ClientePolicomerce.Controllers
 {
     public class LoginController : Controller
     {
-     
-        public LoginController()
-        {
-        }
-
+        #region Inicio
         public ActionResult Index()
         {
             ActionResult result = null;
@@ -21,7 +17,8 @@ namespace ClientePolicomerce.Controllers
              return result;
 
         }
-
+        #endregion
+        #region VALIDACION USUARIOS
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -67,6 +64,8 @@ namespace ClientePolicomerce.Controllers
             }
             
         }
+        #endregion
+        #region CERRAR SESSION
         public ActionResult CerrarSession()
         {
             Session["User"] = null;
@@ -78,6 +77,6 @@ namespace ClientePolicomerce.Controllers
             
             return View();
         }
-
+        #endregion
     }
 }

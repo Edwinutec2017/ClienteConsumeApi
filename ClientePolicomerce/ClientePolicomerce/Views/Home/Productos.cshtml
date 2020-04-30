@@ -59,7 +59,7 @@
 
                 </select>
             
-                <label>Nombre Cliente</label>
+                <label> Cliente</label>
                 <label id="codclien" hidden>@usuario.Codigo</label>
                 <input type="text" name="cliente" value="@usuario.Nombre" class="form-control inputpedido" readonly disabled />
                 <br />
@@ -83,36 +83,38 @@
         <table id="productotb" border="0" class="display">
             <thead>
                 <tr>
-                    <th style="text-align:center" hidden>CODIGO</th>
-                    <th style="text-align:center;background-color:black;color:white">NOMBRE</th>
-                    <th style="text-align:center;background-color:black;color:white">CATEGORIA</th>
-                    <th style="text-align:center;background-color:black;color:white">DESCRIPCION</th>
-                    <th style="text-align:justify;background-color:black;color:white" hidden>PRECIO</th>
-                    <th style="text-align:left;background-color:black;color:white">IMAGEN</th>
-                    <th style="text-align:left;background-color:black;color:white" hidden>IMAGEN</th>
+                    <th hidden>CODIGO</th>
+                    <th class="contetable ">NOMBRE</th>
+                    <th class="contetable ">CATEGORIA</th>
+                    <th class="contetable ">DESCRIPCION</th>
+                    <th hidden>PRECIO</th>
+                    <th class="contetable ">IMAGEN</th>
+                    <th class="contetable " hidden>IMAGEN</th>
+                    <th class="contetable " >DETALLE</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var produc in ViewBag.Productos)
                 {
                     <tr>
-                        <td style="text-align:center;font-size:13px" hidden>@produc.Codigo</td>
-                        <td style="text-align:center;font-size:16px">@produc.Nombre</td>
-                        <td style="text-align:left;font-size:16px">@produc.Categoria</td>
-                        <td style="text-align:justify;font-size:16px">@produc.Descripcion</td>
-                        <td style="text-align:left;font-size:13px;" hidden>@produc.Precio</td>
-                        <td>
+                        <td  hidden>@produc.Codigo</td>
+                        <td class="detatable">@produc.Nombre</td>
+                        <td class="detatable">@produc.Categoria</td>
+                        <td class="detatable">@produc.Descripcion</td>
+                        <td hidden>@produc.Precio</td>
+                        <td class="detatable">
                             <div class="col-xs-10 col-sm-6 col-md-4 product" style="padding:10px">
                                 <div class="card">
                                     <img src="data:image/png;base64,@produc.Imagen" />
-
-                                    <button type="button" class="btn btn-primary btn-block prodt" style="padding-top:10PX" data-toggle="modal" data-target="#productodetalle">
-                                        <span class="glyphicon glyphicon-menu-hamburger"></span> DETALLE
-                                    </button>
                                 </div>
                             </div>
                         </td>
-                        <td style="text-align:left;font-size:13px;" hidden>@produc.Imagen</td>
+                        <td hidden>@produc.Imagen</td>
+                        <td class="detatable">
+                            <button type="button" class="btn btn-primary  prodt" style="padding-top:10PX" data-toggle="modal" data-target="#productodetalle">
+                                <span class="glyphicon glyphicon-menu-hamburger"></span> 
+                            </button>
+                        </td>
                     </tr>
                 }
             </tbody>

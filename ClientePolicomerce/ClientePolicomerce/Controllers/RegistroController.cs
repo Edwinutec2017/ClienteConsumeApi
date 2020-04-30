@@ -9,6 +9,7 @@ namespace ClientePolicomerce.Controllers
 {
     public class RegistroController : Controller
     {
+        #region INDEX
         [HttpGet]
         public ActionResult Index()
         {
@@ -37,7 +38,8 @@ namespace ClientePolicomerce.Controllers
 
             return result;
         }
-
+        #endregion
+        #region REGISTRO USER
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -54,7 +56,8 @@ namespace ClientePolicomerce.Controllers
             result = RedirectToAction("Index", "Registro");
             return result; 
         }
-
+        #endregion
+        #region VALIDAR USER
         [HttpPost]
         public ActionResult ValidarUsuario(string usuario)
         {
@@ -65,8 +68,8 @@ namespace ClientePolicomerce.Controllers
             result = Json(obj);
             return result;
         }
-
-    
+        #endregion
+        #region LISTA DEPARTAMENTO
         [HttpPost]
         public ActionResult Municipios(int iddep)
         {
@@ -77,6 +80,6 @@ namespace ClientePolicomerce.Controllers
             result = Json(obje);
             return result;
         }
-       
+        #endregion
     }
 }

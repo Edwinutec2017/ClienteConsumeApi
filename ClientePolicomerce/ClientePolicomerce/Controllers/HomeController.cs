@@ -11,7 +11,7 @@ namespace ClientePolicomerce.Controllers
 {
     public class HomeController : Controller
     {
-
+        #region Controlado Inicio
         public ActionResult Index()
         {
             ActionResult result;
@@ -27,7 +27,8 @@ namespace ClientePolicomerce.Controllers
                 result = View();
             return result;
         }
-
+        #endregion
+        #region MUESTRA LA LISTA DE PRODUCTO
         public ActionResult Productos()
         {
             UrlMethodos urlMethodos = new UrlMethodos(null);
@@ -36,7 +37,8 @@ namespace ClientePolicomerce.Controllers
             ViewBag.tipoDocumento = urlMethodos.TipoDocuemto();
             return View();
         }
-
+        #endregion
+        #region MUESTRA LA LISTA DE SERVICIOS
         public ActionResult Servicios()
         {
             UrlMethodos urlMethodos = new UrlMethodos(null);
@@ -45,12 +47,16 @@ namespace ClientePolicomerce.Controllers
             ViewBag.tipoDocumento = urlMethodos.TipoDocuemto();
             return View();
         }
+        #endregion
+        #region MUESTRA EL DETALLE DEL PEDIDO 
         [HttpPost]
         public ActionResult PedidosDetalle (IdPedidoClinte pedi) {
             UrlMethodos urlMethodos = new UrlMethodos(null);
             List<ClPedidoDetalle> det = urlMethodos.MostrarDetalle(pedi.Id);
             return Json(det.ToList());
         }
+        #endregion
+        #region Pedidos Solicitados
         public ActionResult PedidosSolic()
         {
             UrlMethodos urlMethodos = new UrlMethodos(null);
@@ -58,7 +64,8 @@ namespace ClientePolicomerce.Controllers
             ViewBag.Encabezado = urlMethodos.PedidoEncabezados(usuario.Codigo);
             return View();
         }
-
+        #endregion
+        #region Cancelar Pedido
         [HttpPost]
         public ActionResult PedidoCancelar(IdPedidoClinte pedi)
         {
@@ -69,7 +76,8 @@ namespace ClientePolicomerce.Controllers
          
             return result;
         }
-
+        #endregion
+        #region Nuevo Pedido
         [HttpPost]
         public ActionResult Pedido(List<DetallePedido> array, EncabezadoPedido encabezado)
         {
@@ -124,5 +132,6 @@ namespace ClientePolicomerce.Controllers
             return resul;
 
         }
+        #endregion
     }
 }

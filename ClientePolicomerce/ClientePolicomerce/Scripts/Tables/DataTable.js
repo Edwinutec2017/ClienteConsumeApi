@@ -253,6 +253,7 @@ function MostrarDetalle() {
     });
 
 }
+
 $(document).ready(function () {
     $('#Detalle').DataTable();
     $(document).on('click', '.det', function () {

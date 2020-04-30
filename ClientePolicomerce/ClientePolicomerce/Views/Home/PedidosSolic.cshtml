@@ -13,8 +13,8 @@
 
 <div class="row rowest" id="row">
     <div class="ttctg">
-
-        <img src="~/Content/Img/bannerservicios.jpg" class="BBPP" />
+        <img src="~/Content/Img/logo.jpg" class="BBPP"  />
+       
         <h3 class="txtes">PEDIDOS SOLICITADOS</h3>
        
     </div>
@@ -89,11 +89,11 @@
                         }
                     </td>
                     <td class="detatable" hidden>@produc.Id</td>
-
                 </tr>
                 }
             </tbody>
         </table>
+        <br />
         <!-- Modal detalle -->
         <div class="modal fade" id="productodetalle"  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" id="pp" role="document">
@@ -101,9 +101,9 @@
                     <div class="modal-header" style="align-content:center">
                         <img src="~/Content/Img/logo.jpg" class="img" />
                         <h4 class="modal-title" style="text-align:center" id="exampleModalLongTitle">Detalle Pedido</h4>
+                        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
                     </div>
                     <div class="modal-body">
-
                         <table id="Detalle" style="width:100%"  border="0" class="display">
                             <thead>
                                 <tr>
@@ -114,15 +114,10 @@
                                     <th class="contetable">Total</th>
 
                                 </tr>
-                              
                             </thead>
                             <tbody id="cuerpo">
-                              
                             </tbody>
                         </table>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
@@ -134,13 +129,11 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-
-
                         <p style="font-size:15px"><img src="~/Content/Img/logo.jpg" style="width:100px;height:50px" /> Alerta</p>
                     </div>
                     <div class="modal-body" style="text-align:center">
                         <label id="id" hidden></label>
-                        <p style="font-size:20px" hidden><h4 id="mensaje"></h4></p>
+                        <p style="font-size:20px" hidden><h3 id="mensaje"></h3></p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" id="confirmar" onclick="CancelarPedido()" data-dismiss="modal">Confirmar</button>
@@ -149,7 +142,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
 </div>
