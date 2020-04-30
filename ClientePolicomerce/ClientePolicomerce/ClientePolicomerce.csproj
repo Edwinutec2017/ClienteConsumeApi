@@ -180,6 +180,7 @@
     <Content Include="Content\Img\banner3.jpg" />
     <Content Include="Content\Img\bannerProducto.jpg" />
     <Content Include="Content\Img\bannerservicios.jpg" />
+    <Content Include="Content\Img\camisa_1.png" />
     <Content Include="Content\Img\logo.jpg" />
     <Content Include="Content\Login\all.css" />
     <Content Include="Content\Login\bootstrap.min.css" />
