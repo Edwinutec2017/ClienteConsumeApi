@@ -7,231 +7,44 @@
 <script src="~/Scripts/Tables/jquery.dataTables.min.js"></script>
 <link href="~/Content/Table/Estilo.css" rel="stylesheet" />
 <link href="~/Content/Table/jquery.dataTables.min.css" rel="stylesheet" />
-
-
-
 <div class="row rowest" id="row">
     <div class="ttctg">
-
         <img src="~/Content/Img/bannerservicios.jpg" class="BBPP" />
         <h3 class="txtes">CATALOGOS DE SERVICIOS</h3>
-        <h5 class="txtes">FORMULARIO PARA PEDIDOS</h5>
-        <H3>Respuesta</H3>
     </div>
-    <div class="divpedido">
 
-        <label style="padding-left:15px">Los campos con <span class="texobli">*</span> son obligatorios</label>
-        <div class="formpedido">
-            <div class="conten">
-                <label>Fecha Pedido:</label>
-                <input type="text" name="pedidofecha" id="pedidofecha" value="@DateTime.Now.ToString("dd-MM-yyyy")" class="form-control inputpedido" readonly disabled>
-                <br />
-
-                <button type="button" class="btn btn-danger btn-block inputpedido" style="padding-top:10PX" data-toggle="modal" data-target="#EliminarPedido">
-                    <span class="glyphicon glyphicon-remove"></span> CANCELAR
-                </button>
-            </div>
-            <div class="conten">
-                <label>Tipo de Documento</label>
-                <span class="texobli">*</span>
-                <select class="form-control inputpedido" name="doc" id="doc" required>
-                    <option value="0">--------------</option>
-                    @foreach (var doc in ViewBag.tipoDocumento)
-                    {
-                        <option value='@doc.CODIGO'>@doc.NOMBRE</option>
-                    }
-
-                </select>
-                <br />
-                <button type="button" class="btn btn-primary btn-block inputpedido" onclick="Validar()" data-toggle="modal" data-target="#confirmacion" style="padding-top:10PX">
-                    <span class="glyphicon glyphicon-ok"></span> Guardar
-                </button>
-
-                <br>
-            </div>
-            <div class="conten">
-                <label>Tipo de Pago</label><span class="texobli">*</span>
-                <select class="form-control inputpedido" name="pago" id="pago" required>
-                    <option>------------------</option>
-                    @foreach (var pago in ViewBag.tipoPago)
-                    {
-                        <option value='@pago.CODIGO'>@pago.NOMBRE</option>
-                    }
-
-                </select>
-                <br />
-                <label>Nombre Cliente</label>
-                <label id="codclien" hidden>@usuario.Codigo</label>
-                <input type="text" name="cliente" value="@usuario.Nombre" class="form-control inputpedido" readonly disabled />
-                <br />
-
-            </div>
-
-            <div class="conten">
-                <label>Total Pedido $ :</label>
-                <input type="text" name="totalglobal" id="totalglobal" value="0" class="form-control inputpedido" readonly disabled>
-                <label>Cantidad de Producto:</label>
-                <input type="text" name="productocant" id="productocant" value="0" class="form-control inputpedido" readonly disabled>
-
-            </div>
-
-        </div>
-        <br />
-    </div>
-    <br />
     <div>
         <table id="productotb" border="0" class="display">
             <thead>
                 <tr>
-                    <th style="text-align:center" hidden>CODIGO</th>
-                    <th style="text-align:center;background-color:black;color:white">NOMBRE</th>
-                    <th style="text-align:center;background-color:black;color:white">CATEGORIA</th>
-                    <th style="text-align:center;background-color:black;color:white">DESCRIPCION</th>
-                    <th style="text-align:justify;background-color:black;color:white" hidden>PRECIO</th>
-                    <th style="text-align:left;background-color:black;color:white">IMAGEN</th>
-                    <th style="text-align:left;background-color:black;color:white" hidden>IMAGEN</th>
+                    <th class="contetable" >CODIGO</th>
+                    <th class="contetable">NOMBRE</th>
+                    <th class="contetable">DESCRIPCION</th>
+                    <th class="contetable" hidden>PRECIO</th>
+                    <th class="contetable">IMAGEN</th>
+                  
                 </tr>
             </thead>
             <tbody>
                 @foreach (var produc in ViewBag.Servicios)
                 {
                     <tr>
-                        <td style="text-align:center;font-size:13px" hidden>@produc.Codigo</td>
-                        <td style="text-align:center;font-size:16px">@produc.Nombre</td>
-                        <td style="text-align:left;font-size:16px">@produc.Categoria</td>
-                        <td style="text-align:justify;font-size:16px">@produc.Descripcion</td>
-                        <td style="text-align:left;font-size:13px;" hidden>@produc.Precio</td>
+                        <td class="detatable" >@produc.Codigo</td>
+                        <td class="detatable">@produc.Nombre</td>
+                        <td class="detatable">@produc.Descripcion</td>
+                        <td class="detatable" hidden >@produc.Precio</td>
                         <td>
                             <div class="col-xs-10 col-sm-6 col-md-4 product" style="padding:10px">
                                 <div class="card">
-                                    <img src="data:image/png;base64,@produc.Imagen" />
-
-                                    <button type="button" class="btn btn-primary btn-block prodt" style="padding-top:10PX" data-toggle="modal" data-target="#productodetalle">
-                                        <span class="glyphicon glyphicon-menu-hamburger"></span> DETALLE
-                                    </button>
+                                    <img src="data:image/png;base64,@produc.Imagen" />>
                                 </div>
                             </div>
                         </td>
-                        <td style="text-align:left;font-size:13px;" hidden>@produc.Imagen</td>
+                       
                     </tr>
                 }
             </tbody>
         </table>
-        <!-- Modal detalle -->
-        <div class="modal fade" id="productodetalle" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" id="pp" role="document">
-                <div class="modal-content">
-                    <div class="modal-header" style="align-content:center">
-                        <img src="~/Content/Img/logo.jpg" class="img" />
-                        <h4 class="modal-title" style="text-align:center" id="exampleModalLongTitle">DESCRIPCION DEL PRODUCTO</h4>
-                    </div>
-                    <div class="modal-body">
-
-                        <table>
-                            <thead>
-                                <tr>
-
-                                    <td id="imgpp"></td>
-                                    <td>
-                                        <label>Cantidad:</label>
-                                        <input type="text" value="0" id="cantidad" name="cantidad" class="form-control inputmodal" readonly disabled />
-                                        <label>Total $:</label>
-                                        <input type="text" value="0" id="total" name="total" class="form-control inputmodal" readonly disabled />
-                                    </td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <label>Categoria:</label>
-                                        <input type="text" value="" id="categoria" name="categoria" class="form-control inputmodal" readonly disabled />
-
-                                    </td>
-                                    <td>
-                                        <label>Codigo Producto:</label>
-                                        <input type="text" value="" id="cod" name="cod" class="form-control inputmodal" readonly disabled />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label>Nombre:</label>
-                                        <input type="text" value="" id="nombre" name="nombre" class="form-control inputmodal" readonly disabled />
-                                    </td>
-                                    <td>
-                                        <label>Precio $:</label>
-                                        <input type="text" value="" id="precio" name="precio" class="form-control inputmodal" readonly disabled>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <br />
-                                        <button type="button" class="btn btn-primary btn-block btnmodal" onclick="CapturaProduc()">
-                                            <span class="glyphicon glyphicon-plus-sign"></span>
-                                        </button>
-
-                                    </td>
-                                    <td>
-                                        <br />
-                                        <button type="button" class="btn btn-danger btn-block btnmodal" onclick="CapturaProducQuitar()">
-                                            <span class="glyphicon glyphicon-minus-sign"></span>
-                                        </button>
-                                    </td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-success" data-dismiss="modal" onclick="totalfinal()">Agregar</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--alerta-->
-
-        <div class="modal" tabindex="-1" role="dialog" id="EliminarPedido">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-
-
-                        <p style="font-size:15px"><img src="~/Content/Img/logo.jpg" style="width:100px;height:50px" /> Alerta</p>
-                    </div>
-                    <div class="modal-body" style="text-align:center">
-
-                        <p style="font-size:20px"><h4>Eliminacion de pedido..</h4></p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" onclick="LimpiarTotal()" data-dismiss="modal">Confirmar</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--modal  0 producto-->
-        <div class="modal" tabindex="-1" role="dialog" id="confirmacion">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <p style="font-size:15px"><img src="~/Content/Img/logo.jpg" style="width:100px;height:50px" /> Alerta</p>
-                    </div>
-                    <div class="modal-body">
-                        <p>
-                            <label style="font-size:20px" id="txtalerta"></label>
-                        </p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-success" data-dismiss="modal" onclick="RegistrarPedido()">Confirmar</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
 
     </div>
 
