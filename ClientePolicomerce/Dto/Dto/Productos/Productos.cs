@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dto.Dto.Productos
 {
-    #region PRODUTOS Y SERVICIOS
+    #region PRODUTOS 
     public class Productos
     {
 
@@ -18,6 +18,19 @@ namespace Dto.Dto.Productos
             public decimal Precio { get; set; }      
     }
     #endregion
+    #region Servicios
+    public class Servicios
+    {
+
+        public int Codigo { get; set; }
+        public string Descripcion { get; set; }
+        public string Imagen { get; set; }
+        public string Nombre { get; set; }
+        public decimal Precio { get; set; }
+    }
+    #endregion
+
+
     #region PARA DOCUMENTO Y TIPO PAGO
     public class DocumentoyPago
     {

@@ -43,7 +43,7 @@ namespace ClientePolicomerce.Controllers
                     }
                     else
                     {
-                        TempData["msg"] = "Error de autenticacion.. Usuario O Password Icorrectos";
+                        TempData["msg"] = "Error de autenticacion.. Credenciales Incorrectas o no tiene permiso..";
                         TempData["status"] = "Status:200.";
                         result = RedirectToAction("Error", "Login"); ;
                     }

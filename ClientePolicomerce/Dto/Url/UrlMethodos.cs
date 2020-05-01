@@ -176,13 +176,13 @@ namespace Dto.Url
         }
         #endregion
         #region SERVICIOS TODOS
-        public List<Productos> Servicios() {
+        public List<Servicios> Servicios() {
             try {
-                List<Productos> _servicicio = new List<Productos>();
+                List<Servicios> _servicicio = new List<Servicios>();
                 urlApi = api.UrlListaServicios();
                 var result = Get();
                 if (result.IsSuccessStatusCode) {
-                    _servicicio = result.Content.ReadAsAsync<List<Productos>>().Result;
+                    _servicicio = result.Content.ReadAsAsync<List<Servicios>>().Result;
                 }
                 return _servicicio;
             }
