@@ -22,3 +22,15 @@ F:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\obj\Debug\Dto.csproj.Co
 F:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\obj\Debug\Dto.dll
 F:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\obj\Debug\Dto.pdb
 F:\repositorios\ClienteConsumeApi\ClientePolicomerce\Dto\obj\Debug\Dto.csprojAssemblyReference.cache
+C:\ReposNueva\ClienteConsumeApi\ClientePolicomerce\Dto\bin\Debug\Dto.dll.config
+C:\ReposNueva\ClienteConsumeApi\ClientePolicomerce\Dto\bin\Debug\Dto.dll
+C:\ReposNueva\ClienteConsumeApi\ClientePolicomerce\Dto\bin\Debug\Dto.pdb
+C:\ReposNueva\ClienteConsumeApi\ClientePolicomerce\Dto\bin\Debug\Newtonsoft.Json.dll
+C:\ReposNueva\ClienteConsumeApi\ClientePolicomerce\Dto\bin\Debug\System.Net.Http.Formatting.dll
+C:\ReposNueva\ClienteConsumeApi\ClientePolicomerce\Dto\bin\Debug\Newtonsoft.Json.xml
+C:\ReposNueva\ClienteConsumeApi\ClientePolicomerce\Dto\bin\Debug\System.Net.Http.Formatting.xml
+C:\ReposNueva\ClienteConsumeApi\ClientePolicomerce\Dto\obj\Debug\Dto.csprojAssemblyReference.cache
+C:\ReposNueva\ClienteConsumeApi\ClientePolicomerce\Dto\obj\Debug\Dto.csproj.CoreCompileInputs.cache
+C:\ReposNueva\ClienteConsumeApi\ClientePolicomerce\Dto\obj\Debug\Dto.csproj.CopyComplete
+C:\ReposNueva\ClienteConsumeApi\ClientePolicomerce\Dto\obj\Debug\Dto.dll
+C:\ReposNueva\ClienteConsumeApi\ClientePolicomerce\Dto\obj\Debug\Dto.pdb
