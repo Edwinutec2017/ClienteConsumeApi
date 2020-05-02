@@ -31,21 +31,70 @@ namespace ClientePolicomerce.Controllers
         #region MUESTRA LA LISTA DE PRODUCTO
         public ActionResult Productos()
         {
-            UrlMethodos urlMethodos = new UrlMethodos(null);
-            ViewBag.Productos = urlMethodos.Productos();
-            ViewBag.tipoPago = urlMethodos.TipoPago();
-            ViewBag.tipoDocumento = urlMethodos.TipoDocuemto();
-            return View();
+            ActionResult result;
+            try {
+                UrlMethodos urlMethodos = new UrlMethodos(null);
+                var productos= urlMethodos.Productos();
+                if (productos.Count >0) {
+                    ViewBag.Productos = productos;
+                    ViewBag.tipoPago = urlMethodos.TipoPago();
+                    ViewBag.tipoDocumento = urlMethodos.TipoDocuemto();
+                    result = View();
+                }
+                else {
+                    TempData["msg"] = "Servicios no disponibles";
+                    TempData["status"] = "Status:400.";
+                    Session["User"] = null;
+                    result = RedirectToAction("Index", "Login");
+
+                }
+
+
+            }
+            catch (Exception ex) {
+                Console.WriteLine($"Servicios no disponibles {ex.StackTrace}");
+                TempData["msg"] = "Servicios no disponibles";
+                TempData["status"] = "Status:400.";
+                Session["User"] = null;
+                result = RedirectToAction("Imdex", "Login");
+            }
+
+    
+            return result;
         }
         #endregion
         #region MUESTRA LA LISTA DE SERVICIOS
         public ActionResult Servicios()
         {
-            UrlMethodos urlMethodos = new UrlMethodos(null);
-            ViewBag.Servicios = urlMethodos.Servicios();
-            ViewBag.tipoPago = urlMethodos.TipoPago();
-            ViewBag.tipoDocumento = urlMethodos.TipoDocuemto();
-            return View();
+            ActionResult result;
+            try
+            {
+                UrlMethodos urlMethodos = new UrlMethodos(null);
+                var servicios= urlMethodos.Servicios();
+                if (servicios.Count > 0)
+                {
+                    ViewBag.Servicios = servicios;
+                    ViewBag.tipoPago = urlMethodos.TipoPago();
+                    ViewBag.tipoDocumento = urlMethodos.TipoDocuemto();
+                    result = View();
+                }
+                else {
+                    TempData["msg"] = "Servicios no disponibles";
+                    TempData["status"] = "Status:400.";
+                    Session["User"] = null;
+                    result = RedirectToAction("Index", "Login");
+                }
+            
+            }
+            catch (Exception ex) {
+                Console.WriteLine($"Servicios no disponibles {ex.StackTrace}");
+                TempData["msg"] = "Servicios no disponibles";
+                TempData["status"] = "Status:400.";
+                Session["User"] = null;
+                result = RedirectToAction("Imdex", "Login");
+            }
+          
+            return result;
         }
         #endregion
         #region MUESTRA EL DETALLE DEL PEDIDO 
@@ -59,10 +108,32 @@ namespace ClientePolicomerce.Controllers
         #region Pedidos Solicitados
         public ActionResult PedidosSolic()
         {
-            UrlMethodos urlMethodos = new UrlMethodos(null);
-            var usuario = Session["User"] as LoginDto;
-            ViewBag.Encabezado = urlMethodos.PedidoEncabezados(usuario.Codigo);
-            return View();
+            ActionResult result;
+            try {
+                UrlMethodos urlMethodos = new UrlMethodos(null);
+                var usuario = Session["User"] as LoginDto;
+                ViewBag.Encabezado = urlMethodos.PedidoEncabezados(usuario.Codigo);
+                if (urlMethodos.Status.Equals(200))
+                {
+                    result = View();
+                }
+                else {
+                    TempData["msg"] = "Servicios no disponibles";
+                    TempData["status"] = "Status:400.";
+                    Session["User"] = null;
+                    result = RedirectToAction("Index", "Login");
+                }
+            }
+            catch (Exception ex) {
+                Console.Write($"Error de servcio{ex.StackTrace}");
+                TempData["msg"] = "Servicios no disponibles";
+                TempData["status"] = "Status:400.";
+                Session["User"] = null;
+                result = RedirectToAction("Index", "Login");
+            }
+         
+
+            return result;
         }
         #endregion
         #region Cancelar Pedido

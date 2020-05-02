@@ -1,6 +1,7 @@
 ﻿@{
     Layout = null;
-    var mensaje= TempData["msg"];
+    var mensaje = TempData["msg"];
+    var mensaje2 = TempData["status"];
     ViewBag.Title = "Login";
 }
 <!DOCTYPE html>
@@ -46,12 +47,14 @@
                         </div>
 
                     }
-                    <a href="/Registro/Index" class="btn btn-info btn-lg"  role="button" aria-pressed="true">Registro</a>
+                    <a href="/Registro/Index" class="btn btn-info btn-lg" role="button" aria-pressed="true">Registro</a>
                     <div>
                         <br />
                         <h5 style="color:#ffffff">@mensaje</h5>
                     </div>
-               
+                    <div>
+                        <h5 style="color:#ffffff">@mensaje2</h5>
+                    </div>
                 </div>
             </div>
         </div>
