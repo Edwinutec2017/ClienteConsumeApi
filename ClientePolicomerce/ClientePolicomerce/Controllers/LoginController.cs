@@ -58,7 +58,7 @@ namespace ClientePolicomerce.Controllers
             catch (Exception ex ) {
                 Console.WriteLine($"Error de Autenticacion {ex.StackTrace} ");
                 TempData["msg"] = "Servicio de autenticacion Inaccesible.";
-                TempData["status"] = "Status:400.";
+                TempData["status"] = "Status:404.";
                 result = RedirectToAction("Error", "Login");
                 return result;
             }
