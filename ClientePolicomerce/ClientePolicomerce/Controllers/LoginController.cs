@@ -45,7 +45,7 @@ namespace ClientePolicomerce.Controllers
                     {
                         TempData["msg"] = "Error de autenticacion.. Credenciales Incorrectas o no tiene permiso..";
                         TempData["status"] = "Status:200.";
-                        result = RedirectToAction("Error", "Login"); ;
+                        result = RedirectToAction("Error", "Login");
                     }
                     
                 }
@@ -59,7 +59,7 @@ namespace ClientePolicomerce.Controllers
                 Console.WriteLine($"Error de Autenticacion {ex.StackTrace} ");
                 TempData["msg"] = "Servicio de autenticacion Inaccesible.";
                 TempData["status"] = "Status:400.";
-                result = RedirectToAction("Error", "Login"); ;
+                result = RedirectToAction("Error", "Login");
                 return result;
             }
             
@@ -71,7 +71,7 @@ namespace ClientePolicomerce.Controllers
             Session["User"] = null;
             Session.Remove("User");
             TempData["msg"] = "";
-            return RedirectToAction("Index", "Login"); ;
+            return RedirectToAction("Index", "Login");
         }
         public ActionResult Error() {
             

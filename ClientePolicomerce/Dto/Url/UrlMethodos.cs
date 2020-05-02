@@ -26,6 +26,7 @@ namespace Dto.Url
         private static  object obj;
         private static object ObjResp { set; get; }
         private UrlApi api;
+        public int Status { get; set; }
         #endregion
 
         #region CONSTRUCTOR
@@ -364,6 +365,10 @@ namespace Dto.Url
                 if (result.IsSuccessStatusCode)
                 {
                     _pedido = result.Content.ReadAsAsync<List<ClPepdidoEnca>>().Result;
+                    Status = 200;
+                }
+                else {
+                    Status = 400;
                 }
                 return _pedido;
             }
