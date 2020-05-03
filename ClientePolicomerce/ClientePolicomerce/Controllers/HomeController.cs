@@ -80,7 +80,7 @@ namespace ClientePolicomerce.Controllers
                 }
                 else {
                     TempData["msg"] = "Servicios no disponibles";
-                    TempData["status"] = "Status:400.";
+                    TempData["status"] = "Status:404";
                     Session["User"] = null;
                     result = RedirectToAction("Index", "Login");
                 }
@@ -89,7 +89,7 @@ namespace ClientePolicomerce.Controllers
             catch (Exception ex) {
                 Console.WriteLine($"Servicios no disponibles {ex.StackTrace}");
                 TempData["msg"] = "Servicios no disponibles";
-                TempData["status"] = "Status:400.";
+                TempData["status"] = "Status:404";
                 Session["User"] = null;
                 result = RedirectToAction("Imdex", "Login");
             }
@@ -119,7 +119,7 @@ namespace ClientePolicomerce.Controllers
                 }
                 else {
                     TempData["msg"] = "Servicios no disponibles";
-                    TempData["status"] = "Status:400.";
+                    TempData["status"] = "Status:404";
                     Session["User"] = null;
                     result = RedirectToAction("Index", "Login");
                 }
@@ -127,7 +127,7 @@ namespace ClientePolicomerce.Controllers
             catch (Exception ex) {
                 Console.Write($"Error de servcio{ex.StackTrace}");
                 TempData["msg"] = "Servicios no disponibles";
-                TempData["status"] = "Status:400.";
+                TempData["status"] = "Status:404";
                 Session["User"] = null;
                 result = RedirectToAction("Index", "Login");
             }

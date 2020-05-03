@@ -32,7 +32,7 @@ namespace ClientePolicomerce.Controllers
             catch (Exception ex) {
                 Console.WriteLine($"Url No encontrada {ex.StackTrace}");
                 TempData["msg"] = "Registro de Usuario No Disponible.";
-                TempData["status"] = "Status: 400";
+                TempData["status"] = "Status: 404";
                 result = RedirectToAction("Error", "Login"); 
             }
 

@@ -17,10 +17,10 @@
         <table id="productotb" border="0" class="display">
             <thead>
                 <tr>
-                    <th class="contetable" >CODIGO</th>
+                    <th class="contetable" hidden>CODIGO</th>
                     <th class="contetable">NOMBRE</th>
                     <th class="contetable">DESCRIPCION</th>
-                    <th class="contetable" hidden>PRECIO</th>
+                    <th class="contetable" >PRECIO</th>
                     <th class="contetable">IMAGEN</th>
                   
                 </tr>
@@ -29,10 +29,10 @@
                 @foreach (var produc in ViewBag.Servicios)
                 {
                     <tr>
-                        <td class="detatable" >@produc.Codigo</td>
+                        <td class="detatable" hidden>@produc.Codigo</td>
                         <td class="detatable">@produc.Nombre</td>
                         <td class="detatable">@produc.Descripcion</td>
-                        <td class="detatable" hidden >@produc.Precio</td>
+                        <td class="detatable">@produc.Precio</td>
                         <td>
                             <div class="col-xs-10 col-sm-6 col-md-4 product" style="padding:10px">
                                 <div class="card">
